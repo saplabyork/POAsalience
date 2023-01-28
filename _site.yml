@@ -1,0 +1,11 @@
+name: "POAsalience"
+navbar:
+  title: "Tamil POA Salience AX"
+  left:
+    - text: "Background"
+      href: index.html
+    - text: "Recording methods"
+      href: recording.html
+    - text: "Practice"
+      href: Practice.html
+output_dir: "docs"
