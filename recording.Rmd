@@ -6,6 +6,9 @@ output:
       in_header: "favicon.html"
     theme: paper
 ---
+
+
+
 <style type="text/css">
   body{
   font-size: 12pt;
@@ -22,3 +25,46 @@ output:
 }
 
 </style>
+
+# Stimuli
+
+* pV, thV, tV, kV, hV {V=a,i,u} by Male native speaker of Tamil
+* Stims scaled to 62dB using Matt Winn's script
+* Multitalker babble 1.5s of multiple male voices (8 talkers) recorded by Vijay Rathinam simulating the crowd at a cock fight. Audio was time reversed in Praat to prevent any linguistic information from the babble interfering with the phonetic discrimination.
+
+# Design
+
+The perception experiment will be a fully-crossed AX discrimination task, with 5 places of articulation (bilab, den, ret, vel, glot): p, th, t, k, h.
+
+pa-pa x 4 \
+pa-tha\
+pa-ta\
+pa-ka\
+pa-ha\
+
+tha-pa\
+tha-tha x 4\
+tha-ta\
+tha-ka\
+tha-ha\
+
+ta-pa\
+ta-tha\
+ta-ta x 4\
+ta-ka\
+ta-ha\
+
+ka-pa\
+ka-tha\
+ka-ta\
+ka-ka x 4\
+ka-ha\
+
+ha-pa\
+ha-tha\
+ha-ta\
+ha-ka\
+ha-ha x 4\
+
+40 trials (20 Contrast, 20 Identity) x 3 vowels = 120 x 3 SNRs = 360 trials\
+Each trial ~ 1.5s = 0.5s response = 2s/trial; 360 trials x 2 secs = 12mins + 2 self-paced breaks = ~15 minutes/experiment.
