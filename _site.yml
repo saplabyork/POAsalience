@@ -4,8 +4,6 @@ navbar:
   left:
     - text: "Background"
       href: index.html
-    - text: "Recording methods"
+    - text: "AX task: Recording methods"
       href: recording.html
-    - text: "Practice"
-      href: Practice.html
 output_dir: "docs"
