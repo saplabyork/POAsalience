@@ -1,6 +1,6 @@
 name: "POAsalience"
 navbar:
-  title: "Tamil POA Salience AX"
+  title: "Debuccalization project"
   left:
     - text: "Background"
       href: index.html
