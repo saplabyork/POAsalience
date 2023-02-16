@@ -4,6 +4,8 @@ navbar:
   left:
     - text: "Background"
       href: index.html
-    - text: "AX task: Recording methods"
+    - text: "Production tasks"
+      href: production.html
+    - text: "AX task: Stims and methods"
       href: recording.html
 output_dir: "docs"
