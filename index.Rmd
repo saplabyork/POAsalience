@@ -65,3 +65,7 @@ The **Phonological pressure** study directly examines Tuttle's claim that v > b 
 Provided speakers do not aspirate their [p-], my hypothesis is that there is internal acoustic-perceptual pressure which affects the debuccalization, namely, that [p-] bursts are quiet enough to be misheard. The second experiment compares the discriminability of various place-of-articulation contrasts from Tamil: p, t̪ ,ʈ,k,and h. We are specifically targeting the discriminability of p vs. h against t̪ ,ʈ,k vs. h.
 
 We will do an AX task for each pair of places of articulation in three SNR conditions. The prediction is the p-h will have a SDT d' score lower than t̪-h and ʈ-h and k-h, i.e., p-h is less discriminable than other combinations as evidenced by a low d' in noise conditions.
+
+### Confusion
+Tamil confusion matrices in noise.
+See Cutler et al. (2004) for confusion matrix methods.

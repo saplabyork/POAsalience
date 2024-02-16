@@ -34,7 +34,7 @@ output:
 
 # Design
 
-The perception experiment will be a fully-crossed AX discrimination task, with 5 places of articulation (bilab, den, ret, vel, glot): p, th, t, k, h.
+The perception experiment will be a fully-crossed AX discrimination task, with 5 places of articulation (bilab, den, ret, vel, glot): p, th, t, k, h; with 3 vowels (i, a, u).
 
 pa-pa x 4 \
 pa-tha\
