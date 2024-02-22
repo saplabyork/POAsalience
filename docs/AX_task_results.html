@@ -340,6 +340,79 @@ ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
   theme_minimal()</code></pre>
 <p><img src="AX_task_results_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
+<div id="model" class="section level1">
+<h1><strong>Model</strong></h1>
+<p>This is a very basic model with accuracy (“corr” in the data frame)
+as a function of group (“snr”) crossed with contrast (4 levels:p-th,
+p-t, p-k,p-h). In the model the “clean” group (no added noise) is the
+reference for snr and “p-h” is the reference for contrast.</p>
+<pre class="r"><code>library(lme4)
+filtered_full_data$snr &lt;- relevel(filtered_full_data$snr, ref = &quot;clean&quot;)
+
+model &lt;- glmer(corr ~ snr * con + (1 | part), data = filtered_full_data, family = binomial, control=glmerControl(optimizer=&quot;bobyqa&quot;,optCtrl=list(maxfun=2e5)))
+summary(model)</code></pre>
+<pre><code>## Generalized linear mixed model fit by maximum likelihood (Laplace
+##   Approximation) [glmerMod]
+##  Family: binomial  ( logit )
+## Formula: corr ~ snr * con + (1 | part)
+##    Data: filtered_full_data
+## Control: glmerControl(optimizer = &quot;bobyqa&quot;, optCtrl = list(maxfun = 2e+05))
+## 
+##      AIC      BIC   logLik deviance df.resid 
+##   1335.6   1404.4   -654.8   1309.6     1451 
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -4.5848 -0.4261  0.2733  0.4661  3.4210 
+## 
+## Random effects:
+##  Groups Name        Variance Std.Dev.
+##  part   (Intercept) 1.158    1.076   
+## Number of obs: 1464, groups:  part, 60
+## 
+## Fixed effects:
+##               Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)     0.1687     0.3580   0.471 0.637600    
+## snr15          -0.6407     0.4606  -1.391 0.164217    
+## snr5           -1.7867     0.4979  -3.589 0.000332 ***
+## conp-k          1.7899     0.3834   4.668 3.04e-06 ***
+## conp-t          2.6332     0.4513   5.835 5.38e-09 ***
+## conp-th         2.7764     0.4670   5.946 2.76e-09 ***
+## snr15:conp-k    0.3346     0.4797   0.697 0.485529    
+## snr5:conp-k     0.4213     0.5003   0.842 0.399770    
+## snr15:conp-t    0.2734     0.5584   0.490 0.624331    
+## snr5:conp-t     0.4856     0.5691   0.853 0.393554    
+## snr15:conp-th   0.4400     0.5854   0.752 0.452323    
+## snr5:conp-th    0.5815     0.5882   0.989 0.322882    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##              (Intr) snr15  snr5   conp-k conp-t cnp-th snr15:cnp-k snr5:cnp-k
+## snr15        -0.777                                                          
+## snr5         -0.720  0.560                                                   
+## conp-k       -0.396  0.307  0.280                                            
+## conp-t       -0.338  0.263  0.238  0.384                                     
+## conp-th      -0.327  0.254  0.230  0.373  0.336                              
+## snr15:cnp-k   0.319 -0.410 -0.229 -0.789 -0.296 -0.287                       
+## snr5:conp-k   0.305 -0.237 -0.466 -0.760 -0.287 -0.279  0.604                
+## snr15:conp-t  0.276 -0.355 -0.198 -0.299 -0.796 -0.260  0.390       0.229    
+## snr5:conp-t   0.270 -0.210 -0.416 -0.296 -0.784 -0.257  0.234       0.453    
+## snr15:cnp-th  0.263 -0.339 -0.189 -0.286 -0.256 -0.786  0.375       0.219    
+## snr5:cnp-th   0.262 -0.203 -0.403 -0.287 -0.257 -0.784  0.227       0.440    
+##              snr15:conp-t snr5:conp-t snr15:cnp-th
+## snr15                                             
+## snr5                                              
+## conp-k                                            
+## conp-t                                            
+## conp-th                                           
+## snr15:cnp-k                                       
+## snr5:conp-k                                       
+## snr15:conp-t                                      
+## snr5:conp-t   0.630                               
+## snr15:cnp-th  0.338        0.202                  
+## snr5:cnp-th   0.205        0.405       0.623</code></pre>
+</div>
 
 
 

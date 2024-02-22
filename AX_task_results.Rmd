@@ -80,3 +80,15 @@ ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
   labs(x = "Contrast", y = "Proportion Correct", fill = "Contrast") +
   theme_minimal()
 ```
+
+# **Model**
+
+This is a very basic model with accuracy ("corr" in the data frame) as a function of group ("snr") crossed with contrast (4 levels:p-th, p-t, p-k,p-h). In the model the "clean" group (no added noise) is the reference for snr and "p-h" is the reference for contrast.
+
+```{r}
+library(lme4)
+filtered_full_data$snr <- relevel(filtered_full_data$snr, ref = "clean")
+
+model <- glmer(corr ~ snr * con + (1 | part), data = filtered_full_data, family = binomial, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+summary(model)
+```
