@@ -1,5 +1,5 @@
 ---
-title: "AX task results"
+title: ""
 output: 
   html_document:
     includes:
@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 ```
 
-# AX task
+# **AX task**
 
 The AX task was conducted in Tamil Nadu via Gorilla. It was a between-subjects design with three groups: Clean, 15dB SNR, and 5dB SNR. We collected data from 64 participants: 20 in Clean, 24 in 15db SNR, and 20 in 5dB SNR. In hindsight we should have done it within-subjects, but I thought the experiment would take too long to complete. There were 120 items that tested discrimination of consonant contrasts in varying vowel environments. For example: ha-ka, ki-ti, pu-thu, etc.
 
