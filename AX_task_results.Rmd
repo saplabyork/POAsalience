@@ -1,0 +1,82 @@
+---
+title: "AX task results"
+output: 
+  html_document:
+    includes:
+      in_header: "favicon.html"
+    theme: paper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+# AX task
+
+The AX task was conducted in Tamil Nadu via Gorilla. It was a between-subjects design with three groups: Clean, 15dB SNR, and 5dB SNR. We collected data from 64 participants: 20 in Clean, 24 in 15db SNR, and 20 in 5dB SNR. In hindsight we should have done it within-subjects, but I thought the experiment would take too long to complete. There were 120 items that tested discrimination of consonant contrasts in varying vowel environments. For example: ha-ka, ki-ti, pu-thu, etc.
+
+## p-C discrimination
+
+For the purposes of this task however, we're only interested in the p-C contrasts (this includes C-p as well).
+
+Load the data:
+```{r}
+data_15 <- read.csv("Master_15_local.csv", header = TRUE)
+data_5 <- read.csv("Master_5_local.csv", header = TRUE)
+data_clean <- read.csv("Master_clean_local.csv", header = TRUE)
+full_data <- rbind(data_clean,data_15,data_5)
+```
+
+Remove all the data except the p-C/C-p trials:
+```{r}
+# Full data clean
+remove_rows <- function(full_data) {
+  allowed_values <- c("p-th", "p-t", "p-k", "p-h")
+  filtered_full_data <- subset(full_data, con %in% allowed_values)
+  return(filtered_full_data)
+}
+
+filtered_full_data <- remove_rows(full_data)
+
+# Make SNR a factor
+filtered_full_data$snr <- as.factor(filtered_full_data$snr)
+```
+
+# Visualize the data
+
+```{r}
+## Make a master bar chart of proportion correct w error bars
+
+library(ggplot2)
+library(dplyr)
+
+# new names for snr facet labels
+snr_names <- list(
+  "clean"="No added noise",
+  "15"="SNR 15dB",
+  "5"="SNR 5 dB")
+
+# use the labeller function in facet
+snr_labeller <- function(variable,value){
+  return(snr_names[value])
+}
+
+# Calculate the mean and standard error (SEM) for each group
+summary_filtered_full_data <- filtered_full_data %>%
+  group_by(snr, con) %>%
+  summarise(mean_corr = mean(corr),
+            sd_corr = sd(corr),
+            n = n()) %>%
+  mutate(se_corr = sd_corr / sqrt(n))  # Calculate Standard Error
+
+# Plot using ggplot2
+
+ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
+  geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) + ylim(0,1)+
+  geom_errorbar(aes(ymin = mean_corr - se_corr, ymax = mean_corr + se_corr),
+                position = position_dodge(width = 0.9), width = 0.25) +
+  facet_wrap(~snr,ncol = 3, labeller = snr_labeller) +
+  labs(x = "Contrast", y = "Proportion Correct", fill = "Contrast") +
+  theme_minimal()
+```

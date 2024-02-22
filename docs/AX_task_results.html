@@ -11,7 +11,7 @@
 
 
 
-<title>Tamil POA Salience</title>
+<title>AX task results</title>
 
 <script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -267,124 +267,79 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Tamil POA Salience</h1>
+<h1 class="title toc-ignore">AX task results</h1>
 
 </div>
 
 
-<style type="text/css">
-  body{
-  font-size: 12pt;
+<div id="ax-task" class="section level1">
+<h1>AX task</h1>
+<p>The AX task was conducted in Tamil Nadu via Gorilla. It was a
+between-subjects design with three groups: Clean, 15dB SNR, and 5dB SNR.
+We collected data from 64 participants: 20 in Clean, 24 in 15db SNR, and
+20 in 5dB SNR. In hindsight we should have done it within-subjects, but
+I thought the experiment would take too long to complete. There were 120
+items that tested discrimination of consonant contrasts in varying vowel
+environments. For example: ha-ka, ki-ti, pu-thu, etc.</p>
+<div id="p-c-discrimination" class="section level2">
+<h2>p-C discrimination</h2>
+<p>For the purposes of this task however, we’re only interested in the
+p-C contrasts (this includes C-p as well).</p>
+<p>Load the data:</p>
+<pre class="r"><code>data_15 &lt;- read.csv(&quot;Master_15_local.csv&quot;, header = TRUE)
+data_5 &lt;- read.csv(&quot;Master_5_local.csv&quot;, header = TRUE)
+data_clean &lt;- read.csv(&quot;Master_clean_local.csv&quot;, header = TRUE)
+full_data &lt;- rbind(data_clean,data_15,data_5)</code></pre>
+<p>Remove all the data except the p-C/C-p trials:</p>
+<pre class="r"><code># Full data clean
+remove_rows &lt;- function(full_data) {
+  allowed_values &lt;- c(&quot;p-th&quot;, &quot;p-t&quot;, &quot;p-k&quot;, &quot;p-h&quot;)
+  filtered_full_data &lt;- subset(full_data, con %in% allowed_values)
+  return(filtered_full_data)
 }
-</style>
-<style type="text/css">
-.title {
-  display: none;
+
+filtered_full_data &lt;- remove_rows(full_data)
+
+# Make SNR a factor
+filtered_full_data$snr &lt;- as.factor(filtered_full_data$snr)</code></pre>
+</div>
+</div>
+<div id="visualize-the-data" class="section level1">
+<h1>Visualize the data</h1>
+<pre class="r"><code>## Make a master bar chart of proportion correct w error bars
+
+library(ggplot2)
+library(dplyr)
+
+# new names for snr facet labels
+snr_names &lt;- list(
+  &quot;clean&quot;=&quot;No added noise&quot;,
+  &quot;15&quot;=&quot;SNR 15dB&quot;,
+  &quot;5&quot;=&quot;SNR 5 dB&quot;)
+
+# use the labeller function in facet
+snr_labeller &lt;- function(variable,value){
+  return(snr_names[value])
 }
 
-#getting-started img {
-  margin-right: 10px;
-}
+# Calculate the mean and standard error (SEM) for each group
+summary_filtered_full_data &lt;- filtered_full_data %&gt;%
+  group_by(snr, con) %&gt;%
+  summarise(mean_corr = mean(corr),
+            sd_corr = sd(corr),
+            n = n()) %&gt;%
+  mutate(se_corr = sd_corr / sqrt(n))  # Calculate Standard Error
 
-</style>
-<div id="debuccalization-in-kannada" class="section level1">
-<h1><strong>Debuccalization in Kannada</strong></h1>
-<p><a href="https://saplabyork.github.io">SAP Lab</a></p>
-<p><img src="images/Inscription_example_ECIII.png"
-style="width:50.0%" /></p>
-<div id="background" class="section level3">
-<h3>Background</h3>
-<p>The current project is one of 2 or 3 studies I’m working on having to
-do with solving the problem of debuccalization in Old Kannada, where Old
-Tamil p→h. The oldest documented occurrance of this change is found in a
-10th C. inscription from Srirangapatnam [910 AD: “…lōkakke hōhan” (for
-<em>pōpan</em>?)] (Narasimhia, 1941 p. 13; <em>Epigraphia Carnatica III,
-Seringapatam Taluq, 134</em>)</p>
-<p>The question is <em>why</em> this happens. There are two hypotheses
-about the origin of this change:</p>
-<ol style="list-style-type: decimal">
-<li><p>Subbaiya, K.V. (<em>Indian Antiquary</em>, 1909, p.197) suggests
-that the change results from contact with Marathi, which sees a similar
-(though limited) change of bh &gt; h. But there are problems with this
-hypothesis–we would expect evidence of the change to be geographically
-predictable, but this is not what we see. The first evidence of change
-is in the southern Kannada-speaking region.</p></li>
-<li><p>The other, perhaps related explanation, is a phonological one
-proposed by Tuttle, E.H. (1929) (<em>American Journal of Philology</em>,
-50, 2, pp.138-155). Tuttle suggests that the change from p &gt; h is
-related to a another change occurring in Kannada around the same time
-(9th C), v &gt; b. The argument runs that there is phonological
-<em>pressure</em> on p to be made more distinct from the newly
-introduced b. As the production of p and b are very similar (especially
-in onsets), p becomes aspirated as [<span
-class="math inline">\(p^h\)</span>]. From aspirated p, Tuttle suggests a
-path to [f] then [h].</p></li>
-</ol>
-<p>The typical path for this sort of debuccalization change is that
-p→f→h. The problem is that there is no evidence of an f stage in the
-change in Kannada. We might expect some sort of accommodation of <span
-class="math inline">\(p^h\)</span> in the inscriptional evidence, but
-this is not what we find, rather simply a whole sale replacement of p
-with h. Of course absence of evidence is not evidence of absence, but I
-want to propose an alternative explanation.</p>
-<p>My theory is that there is internal phonetic/perceptual pressure
-affecting this change. Narayan (2022/23) shows that the burst
-characteristics of p in Tamil, which does not contrast voicing in
-word-initial position and has very short VOT, are low amplitude
-(relative to the amplitude of the vowel).</p>
-<p><img src="images/TamBurst.png"
-style="width:75.0%;height:75.0%" /></p>
-<p>My hypothesis is that low amplitude bursts are potentially not heard
-and confusable with h. The thinking is that Old Kannada, which already
-had h- (from Sanskrit borrowings), is confusable with low amplitude p
-bursts.<br />
-<br />
-</p>
-</div>
-<div id="the-studies" class="section level2">
-<h2>The studies</h2>
-<div id="phonological-pressure" class="section level3">
-<h3>Phonological pressure</h3>
-<p>The <strong>Phonological pressure</strong> study directly examines
-Tuttle’s claim that v &gt; b forces p &gt; [<span
-class="math inline">\(p^h\)</span>] (which ultimately leads to
-debuccalization). In this task, Tamil-speaking subjects learn a new word
-for a nonsense lexical item that results in a minimal pair with a Tamil
-word. The new word starts with [b-] (which is really the p-initial Tamil
-word with maniuplated VOT and F0 characteristics). For example: [baḻam]
-New word ~ [paḻam] “fruit”. Subjects are then asked to produce both
-words as if instructing a new Tamil speaker. They do this in two noise
-conditions, hopefully inducing clear speech behavior.</p>
-<ul>
-<li><p>If subjects behave according to Tuttle, we would expect them to
-disambiguate the new minimal pair by aspirating (to some degree relative
-to baseline productions) their [p-] native Tamil word. [I do not think
-this will happen!]</p></li>
-<li><p>The other possibility is the speakers “strengthen” the new word
-by producing it with longer negative VOT. [I think this will
-happen.]</p></li>
-</ul>
-</div>
-<div id="poa-salience" class="section level3">
-<h3>POA Salience</h3>
-<p>Provided speakers do not aspirate their [p-], my hypothesis is that
-there is internal acoustic-perceptual pressure which affects the
-debuccalization, namely, that [p-] bursts are quiet enough to be
-misheard. The second experiment compares the discriminability of various
-place-of-articulation contrasts from Tamil: p, t̪ ,ʈ,k,and h. We are
-specifically targeting the discriminability of p vs. h against t̪ ,ʈ,k
-vs. h.</p>
-<p>We will do an AX task for each pair of places of articulation in
-three SNR conditions. The prediction is the p-h will have a SDT d’ score
-lower than t̪-h and ʈ-h and k-h, i.e., p-h is less discriminable than
-other combinations as evidenced by a low d’ in noise conditions.</p>
-</div>
-<div id="confusion" class="section level3">
-<h3>Confusion</h3>
-<p>Tamil confusion matrices in noise. See Cutler et al. (2004) for
-confusion matrix methods.</p>
-</div>
-</div>
+# Plot using ggplot2
+
+ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
+  geom_bar(stat = &quot;identity&quot;, position = &quot;dodge&quot;, show.legend = FALSE) + ylim(0,1)+
+  geom_errorbar(aes(ymin = mean_corr - se_corr, ymax = mean_corr + se_corr),
+                position = position_dodge(width = 0.9), width = 0.25) +
+  facet_wrap(~snr,ncol = 3, labeller = snr_labeller) +
+  labs(x = &quot;Contrast&quot;, y = &quot;Proportion Correct&quot;, fill = &quot;Contrast&quot;) +
+  theme_minimal()</code></pre>
+<p><img src="AX_task_results_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 
 

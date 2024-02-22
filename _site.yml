@@ -8,4 +8,6 @@ navbar:
       href: production.html
     - text: "AX task: Stims and methods"
       href: recording.html
+    - text: "AX task: Results"
+      href: AX_task_results.html
 output_dir: "docs"
