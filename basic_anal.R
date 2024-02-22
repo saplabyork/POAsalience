@@ -18,7 +18,7 @@ filtered_data$snr <- as.factor(filtered_data$snr)
 library(lme4)
 filtered_data$snr <- relevel(filtered_data$snr, ref = "clean")
 
-model <- glmer(corr ~ con * vowel + (1 | part), data = filtered_data_clean, family = binomial)
+model <- glmer(corr ~ snr * con + (1 | part), data = filtered_data, family = binomial, control = lmerControl(optimizer ="Nelder_Mead"))
 summary(model)
 
 library(ggplot2)
