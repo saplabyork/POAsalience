@@ -312,9 +312,9 @@ library(dplyr)
 
 # new names for snr facet labels
 snr_names &lt;- list(
-  &quot;clean&quot;=&quot;No added noise&quot;,
   &quot;15&quot;=&quot;SNR 15dB&quot;,
-  &quot;5&quot;=&quot;SNR 5 dB&quot;)
+  &quot;5&quot;=&quot;SNR 5 dB&quot;,
+  &quot;clean&quot;=&quot;No added noise&quot;)
 
 # use the labeller function in facet
 snr_labeller &lt;- function(variable,value){
@@ -330,14 +330,16 @@ summary_filtered_full_data &lt;- filtered_full_data %&gt;%
   mutate(se_corr = sd_corr / sqrt(n))  # Calculate Standard Error
 
 # Plot using ggplot2
-
-ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
+grey_colors &lt;- c(&quot;grey20&quot;, &quot;grey40&quot;, &quot;grey60&quot;, &quot;grey80&quot;)
+full_plot &lt;- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
   geom_bar(stat = &quot;identity&quot;, position = &quot;dodge&quot;, show.legend = FALSE) + ylim(0,1)+
   geom_errorbar(aes(ymin = mean_corr - se_corr, ymax = mean_corr + se_corr),
                 position = position_dodge(width = 0.9), width = 0.25) +
   facet_wrap(~snr,ncol = 3, labeller = snr_labeller) +
-  labs(x = &quot;Contrast&quot;, y = &quot;Proportion Correct&quot;, fill = &quot;Contrast&quot;) +
-  theme_minimal()</code></pre>
+  labs(x = &quot;con&quot;, y = &quot;Proportion Correct&quot;, fill = &quot;Contrast&quot;) +
+  scale_fill_manual(values = grey_colors) +
+  theme_minimal()
+full_plot</code></pre>
 <p><img src="AX_task_results_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 <div id="model" class="section level1">

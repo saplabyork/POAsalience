@@ -53,9 +53,9 @@ library(dplyr)
 
 # new names for snr facet labels
 snr_names <- list(
-  "clean"="No added noise",
   "15"="SNR 15dB",
-  "5"="SNR 5 dB")
+  "5"="SNR 5 dB",
+  "clean"="No added noise")
 
 # use the labeller function in facet
 snr_labeller <- function(variable,value){
@@ -71,14 +71,16 @@ summary_filtered_full_data <- filtered_full_data %>%
   mutate(se_corr = sd_corr / sqrt(n))  # Calculate Standard Error
 
 # Plot using ggplot2
-
-ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
+grey_colors <- c("grey20", "grey40", "grey60", "grey80")
+full_plot <- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
   geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) + ylim(0,1)+
   geom_errorbar(aes(ymin = mean_corr - se_corr, ymax = mean_corr + se_corr),
                 position = position_dodge(width = 0.9), width = 0.25) +
   facet_wrap(~snr,ncol = 3, labeller = snr_labeller) +
-  labs(x = "Contrast", y = "Proportion Correct", fill = "Contrast") +
+  labs(x = "con", y = "Proportion Correct", fill = "Contrast") +
+  scale_fill_manual(values = grey_colors) +
   theme_minimal()
+full_plot
 ```
 
 # **Model**

@@ -13,8 +13,6 @@ library(dplyr)
 result <- filtered_full_data %>%
   group_by(snr) %>%
   summarize(unique_participants = n_distinct(part))
-
-# Print the result
 print(result)
 
 ## Remove all contrasts except p- ones
@@ -151,11 +149,13 @@ summary_filtered_full_data <- filtered_full_data %>%
   mutate(se_corr = sd_corr / sqrt(n))  # Calculate Standard Error
 
 # Plot using ggplot2
-
-ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
+grey_colors <- c("grey20", "grey40", "grey60", "grey80")
+full_plot <- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
   geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) + ylim(0,1)+
   geom_errorbar(aes(ymin = mean_corr - se_corr, ymax = mean_corr + se_corr),
                 position = position_dodge(width = 0.9), width = 0.25) +
   facet_wrap(~snr,ncol = 3, labeller = snr_labeller) +
   labs(x = "con", y = "Proportion Correct", fill = "Contrast") +
+  scale_fill_manual(values = grey_colors) +
   theme_minimal()
+full_plot
