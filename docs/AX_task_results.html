@@ -337,7 +337,7 @@ full_plot &lt;- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, f
                 position = position_dodge(width = 0.9), width = 0.25) +
   facet_wrap(~snr,ncol = 3, labeller = snr_labeller) +
   labs(x = &quot;con&quot;, y = &quot;Proportion Correct&quot;, fill = &quot;Contrast&quot;) +
-  scale_fill_manual(values = grey_colors) +
+  #scale_fill_manual(values = grey_colors) +
   theme_minimal()
 full_plot</code></pre>
 <p><img src="AX_task_results_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>

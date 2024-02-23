@@ -156,6 +156,6 @@ full_plot <- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill
                 position = position_dodge(width = 0.9), width = 0.25) +
   facet_wrap(~snr,ncol = 3, labeller = snr_labeller) +
   labs(x = "con", y = "Proportion Correct", fill = "Contrast") +
-  scale_fill_manual(values = grey_colors) +
+  #scale_fill_manual(values = grey_colors) +
   theme_minimal()
 full_plot
