@@ -2,6 +2,7 @@
 title: ""
 output: 
   html_document:
+    code_ folding: hide
     includes:
       in_header: "favicon.html"
     theme: paper
