@@ -159,3 +159,4 @@ full_plot <- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill
   #scale_fill_manual(values = grey_colors) +
   theme_minimal()
 full_plot
+

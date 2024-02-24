@@ -331,6 +331,7 @@ summary_filtered_full_data &lt;- filtered_full_data %&gt;%
 
 # Plot using ggplot2
 grey_colors &lt;- c(&quot;grey20&quot;, &quot;grey40&quot;, &quot;grey60&quot;, &quot;grey80&quot;)
+
 full_plot &lt;- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
   geom_bar(stat = &quot;identity&quot;, position = &quot;dodge&quot;, show.legend = FALSE) + ylim(0,1)+
   geom_errorbar(aes(ymin = mean_corr - se_corr, ymax = mean_corr + se_corr),

@@ -73,6 +73,7 @@ summary_filtered_full_data <- filtered_full_data %>%
 
 # Plot using ggplot2
 grey_colors <- c("grey20", "grey40", "grey60", "grey80")
+
 full_plot <- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
   geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) + ylim(0,1)+
   geom_errorbar(aes(ymin = mean_corr - se_corr, ymax = mean_corr + se_corr),
