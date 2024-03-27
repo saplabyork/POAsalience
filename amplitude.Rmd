@@ -1,0 +1,29 @@
+---
+title: ""
+output: 
+  html_document:
+    code_ folding: hide
+    includes:
+      in_header: "favicon.html"
+    theme: paper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+## Burst amplitude
+
+In order to show that it is burst amplitude (low in the case of Tamil) contributing to the misperception of /p/ as [h], the burst of pa_clean was amplified in Audacity by 12dB. The result was a Mid-diff of 32dB, consistent with the amplitude of English aspirated /p/ with a 200ms vowel (Narayan, 2022). The Mid-diff of the Tamil original was 42.3dB (higher the mid-diff the lower the amplitude).
+
+This 32dB token was presented in an identification task. Hopefully it shows that listeners make less misclassification as [h].
+
+pa    Mid-diff=42.3dB
+pa_12   Mid-diff=32dB
+
+pi    Mid-diff=32.1
+pi_10   Mid-diff=26.6
+
+pu    Mid0diff=52
+pu_13 Mid-diff=37

@@ -20,10 +20,17 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 installed.packages("cvms")
 library(cvms)
 library(ggplot2)
+library(dplyr)
 setwd("/Users/chandannarayan/GitHub/POAsalience/")
 data <- read.csv("data_ID_3-27.csv", header=TRUE)
 data_clean <- subset(data, display == "Trials-Clean")
 data_noise <- subset(data, display == "Trials-Noise")
+
+# How many participants
+num_unique_participants <- data_clean %>%
+  distinct(Participant.Private.ID) %>%
+  nrow()
+num_unique_participants
 ```
 
 ## Confusion Matrix
@@ -32,7 +39,8 @@ data_noise <- subset(data, display == "Trials-Noise")
 
 ```{r}
 conf_mat_clean <- confusion_matrix(targets = data_clean$cons, predictions = data_clean$Response)
-plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]])+ ggplot2::labs(x = "Signal", y = "Response")
+clean <- plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]]) + ggplot2::labs(x = "Signal", y = "Response")
+print(clean, show_percents ="main")
 
 ```
 
