@@ -281,24 +281,25 @@ $(document).ready(function () {
 ##      Enhances License License_is_FOSS License_restricts_use OS_type Archs
 ##      MD5sum NeedsCompilation Built</code></pre>
 <pre class="r"><code>library(cvms)
+library(ggplot2)
 setwd(&quot;/Users/chandannarayan/GitHub/POAsalience/&quot;)
-data &lt;- read.csv(&quot;data-ID-test.csv&quot;, header=TRUE)
-data_clean &lt;- subset(data, Spreadsheet..display == &quot;Trials-Clean&quot;)
-data_noise &lt;- subset(data, Spreadsheet..display == &quot;Trials-Noise&quot;)</code></pre>
+data &lt;- read.csv(&quot;data_ID_3-27.csv&quot;, header=TRUE)
+data_clean &lt;- subset(data, display == &quot;Trials-Clean&quot;)
+data_noise &lt;- subset(data, display == &quot;Trials-Noise&quot;)</code></pre>
 </div>
 <div id="confusion-matrix" class="section level2">
 <h2>Confusion Matrix</h2>
 </div>
 <div id="clean" class="section level1">
 <h1>Clean</h1>
-<pre class="r"><code>conf_mat_clean &lt;- confusion_matrix(targets = data_clean$Spreadsheet..cons, predictions = data_clean$Response)
-plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]])</code></pre>
+<pre class="r"><code>conf_mat_clean &lt;- confusion_matrix(targets = data_clean$cons, predictions = data_clean$Response)
+plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]])+ ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)</code></pre>
 <p><img src="Confusion_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 <div id="noise" class="section level1">
 <h1>Noise</h1>
-<pre class="r"><code>conf_mat_noise &lt;- confusion_matrix(targets = data_noise$Spreadsheet..cons, predictions = data_noise$Response)
-plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]])</code></pre>
+<pre class="r"><code>conf_mat_noise &lt;- confusion_matrix(targets = data_noise$cons, predictions = data_noise$Response)
+plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]], palette = &quot;Oranges&quot;) + ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)</code></pre>
 <p><img src="Confusion_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Note that the <code>echo = FALSE</code> parameter was added to the
 code chunk to prevent printing of the R code that generated the
