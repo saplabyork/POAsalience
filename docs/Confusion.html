@@ -11,7 +11,7 @@
 
 
 
-<title>Stimuli and Design</title>
+<title>Confusion.knit</title>
 
 <script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -270,76 +270,39 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Stimuli and Design</h1>
 
 </div>
 
 
-<style type="text/css">
-  body{
-  font-size: 12pt;
-}
-</style>
-<style type="text/css">
-.title {
-  display: none;
-}
-
-#getting-started img {
-  margin-right: 10px;
-}
-
-</style>
-<div id="stimuli" class="section level1">
-<h1>Stimuli</h1>
-<ul>
-<li>pV, thV, tV, kV, hV {V=a,i,u} by Male native speaker of Tamil</li>
-<li>Stims scaled to 62dB using Matt Winn’s script</li>
-<li>Multitalker babble 1.5s of multiple male voices (8 talkers) recorded
-by Vijay Rathinam simulating the crowd at a cock fight. Audio was time
-reversed in Praat to prevent any linguistic information from the babble
-interfering with the phonetic discrimination.</li>
-</ul>
+<div id="consonant-confusion" class="section level2">
+<h2>Consonant confusion</h2>
+<pre class="r"><code>installed.packages(&quot;cvms&quot;)</code></pre>
+<pre><code>##      Package LibPath Version Priority Depends Imports LinkingTo Suggests
+##      Enhances License License_is_FOSS License_restricts_use OS_type Archs
+##      MD5sum NeedsCompilation Built</code></pre>
+<pre class="r"><code>library(cvms)
+setwd(&quot;/Users/chandannarayan/GitHub/POAsalience/&quot;)
+data &lt;- read.csv(&quot;data-ID-test.csv&quot;, header=TRUE)
+data_clean &lt;- subset(data, Spreadsheet..display == &quot;Trials-Clean&quot;)
+data_noise &lt;- subset(data, Spreadsheet..display == &quot;Trials-Noise&quot;)</code></pre>
 </div>
-<div id="design" class="section level1">
-<h1>Design</h1>
-<p>The perception experiment will be a fully-crossed AX discrimination
-task, with 5 places of articulation (bilab, den, ret, vel, glot): p, th,
-t, k, h; with 3 vowels (i, a, u).</p>
-<p>pa-pa x 4<br />
-pa-tha<br />
-pa-ta<br />
-pa-ka<br />
-pa-ha<br />
-</p>
-<p>tha-pa<br />
-tha-tha x 4<br />
-tha-ta<br />
-tha-ka<br />
-tha-ha<br />
-</p>
-<p>ta-pa<br />
-ta-tha<br />
-ta-ta x 4<br />
-ta-ka<br />
-ta-ha<br />
-</p>
-<p>ka-pa<br />
-ka-tha<br />
-ka-ta<br />
-ka-ka x 4<br />
-ka-ha<br />
-</p>
-<p>ha-pa<br />
-ha-tha<br />
-ha-ta<br />
-ha-ka<br />
-ha-ha x 4<br />
-</p>
-<p>40 trials (20 Contrast, 20 Identity) x 3 vowels = 120 x 3 SNRs = 360
-trials<br />
-Each trial ~ 1.5s = 0.5s response = 2s/trial; 360 trials x 2 secs =
-12mins + 2 self-paced breaks = ~15 minutes/experiment.</p>
+<div id="confusion-matrix" class="section level2">
+<h2>Confusion Matrix</h2>
+</div>
+<div id="clean" class="section level1">
+<h1>Clean</h1>
+<pre class="r"><code>conf_mat_clean &lt;- confusion_matrix(targets = data_clean$Spreadsheet..cons, predictions = data_clean$Response)
+plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]])</code></pre>
+<p><img src="Confusion_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="noise" class="section level1">
+<h1>Noise</h1>
+<pre class="r"><code>conf_mat_noise &lt;- confusion_matrix(targets = data_noise$Spreadsheet..cons, predictions = data_noise$Response)
+plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]])</code></pre>
+<p><img src="Confusion_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the
+code chunk to prevent printing of the R code that generated the
+plot.</p>
 </div>
 
 

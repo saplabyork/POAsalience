@@ -1,0 +1,44 @@
+---
+title: ""
+output: 
+  html_document:
+    code_ folding: hide
+    includes:
+      in_header: "favicon.html"
+    theme: paper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+## Consonant confusion
+
+
+```{r }
+installed.packages("cvms")
+library(cvms)
+setwd("/Users/chandannarayan/GitHub/POAsalience/")
+data <- read.csv("data-ID-test.csv", header=TRUE)
+data_clean <- subset(data, Spreadsheet..display == "Trials-Clean")
+data_noise <- subset(data, Spreadsheet..display == "Trials-Noise")
+```
+
+## Confusion Matrix
+
+# Clean
+
+```{r}
+conf_mat_clean <- confusion_matrix(targets = data_clean$Spreadsheet..cons, predictions = data_clean$Response)
+plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]])
+
+```
+
+# Noise
+```{r}
+conf_mat_noise <- confusion_matrix(targets = data_noise$Spreadsheet..cons, predictions = data_noise$Response)
+plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]])
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
