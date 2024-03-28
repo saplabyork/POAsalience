@@ -1,0 +1,590 @@
+﻿Participant Private ID,Display,Response,Correct,Spreadsheet: sound,Spreadsheet: cons,Spreadsheet: vowel,Spreadsheet: noise
+10768523,,START SUBSYSTEM base.component.audioSubsystem,0,,,,
+10768523,,SUBSYSTEM READY base.component.audioSubsystem,0,,,,
+10768523,,BEGIN,0,,,,
+10768523,Instructions,,1,,,,
+10768523,Instructions,,1,,,,
+10768523,Practice,audio started,0,KU_clean.mp3,k,u,clean
+10768523,Practice,audio finished,0,KU_clean.mp3,k,u,clean
+10768523,Practice,p,0,KU_clean.mp3,k,u,clean
+10768523,Practice,audio started,0,HA_clean.mp3,h,a,clean
+10768523,Practice,h,1,HA_clean.mp3,h,a,clean
+10768523,Practice,audio finished,0,HA_clean.mp3,h,a,clean
+10768523,Practice,audio started,0,PI_clean.mp3,p,i,clean
+10768523,Practice,audio finished,0,PI_clean.mp3,p,i,clean
+10768523,Practice,h,0,PI_clean.mp3,p,i,clean
+10768523,Ready?,,1,,,,
+10768523,Trials-Clean,audio started,0,KU_clean.mp3,k,u,clean
+10768523,Trials-Clean,audio finished,0,KU_clean.mp3,k,u,clean
+10768523,Trials-Clean,h,0,KU_clean.mp3,k,u,clean
+10768523,Trials-Clean,audio started,0,PA_clean.mp3,p,a,clean
+10768523,Trials-Clean,audio finished,0,PA_clean.mp3,p,a,clean
+10768523,Trials-Clean,k,0,PA_clean.mp3,p,a,clean
+10768523,Trials-Clean,audio started,0,TI_clean.mp3,t,i,clean
+10768523,Trials-Clean,audio finished,0,TI_clean.mp3,t,i,clean
+10768523,Trials-Clean,th,0,TI_clean.mp3,t,i,clean
+10768523,Trials-Clean,audio started,0,HI_clean.mp3,h,i,clean
+10768523,Trials-Clean,audio finished,0,HI_clean.mp3,h,i,clean
+10768523,Trials-Clean,h,1,HI_clean.mp3,h,i,clean
+10768523,Trials-Clean,audio started,0,PI_clean.mp3,p,i,clean
+10768523,Trials-Clean,audio finished,0,PI_clean.mp3,p,i,clean
+10768523,Trials-Clean,h,0,PI_clean.mp3,p,i,clean
+10768523,Trials-Clean,audio started,0,THA_clean.mp3,th,a,clean
+10768523,Trials-Clean,audio finished,0,THA_clean.mp3,th,a,clean
+10768523,Trials-Clean,th,1,THA_clean.mp3,th,a,clean
+10768523,Trials-Clean,audio started,0,KI_clean.mp3,k,i,clean
+10768523,Trials-Clean,audio finished,0,KI_clean.mp3,k,i,clean
+10768523,Trials-Clean,k,1,KI_clean.mp3,k,i,clean
+10768523,Trials-Clean,audio started,0,THI_clean.mp3,th,i,clean
+10768523,Trials-Clean,audio finished,0,THI_clean.mp3,th,i,clean
+10768523,Trials-Clean,th,1,THI_clean.mp3,th,i,clean
+10768523,Trials-Clean,audio started,0,HI_clean.mp3,h,i,clean
+10768523,Trials-Clean,audio finished,0,HI_clean.mp3,h,i,clean
+10768523,Trials-Clean,h,1,HI_clean.mp3,h,i,clean
+10768523,Trials-Clean,audio started,0,THI_clean.mp3,th,i,clean
+10768523,Trials-Clean,audio finished,0,THI_clean.mp3,th,i,clean
+10768523,Trials-Clean,th,1,THI_clean.mp3,th,i,clean
+10768523,Trials-Clean,audio started,0,TI_clean.mp3,t,i,clean
+10768523,Trials-Clean,audio finished,0,TI_clean.mp3,t,i,clean
+10768523,Trials-Clean,t,1,TI_clean.mp3,t,i,clean
+10768523,Trials-Clean,audio started,0,KA_clean.mp3,k,a,clean
+10768523,Trials-Clean,audio finished,0,KA_clean.mp3,k,a,clean
+10768523,Trials-Clean,k,1,KA_clean.mp3,k,a,clean
+10768523,Trials-Clean,audio started,0,THA_clean.mp3,th,a,clean
+10768523,Trials-Clean,audio finished,0,THA_clean.mp3,th,a,clean
+10768523,Trials-Clean,th,1,THA_clean.mp3,th,a,clean
+10768523,Trials-Clean,audio started,0,HA_clean.mp3,h,a,clean
+10768523,Trials-Clean,audio finished,0,HA_clean.mp3,h,a,clean
+10768523,Trials-Clean,h,1,HA_clean.mp3,h,a,clean
+10768523,Trials-Clean,audio started,0,TA_clean.mp3,t,a,clean
+10768523,Trials-Clean,audio finished,0,TA_clean.mp3,t,a,clean
+10768523,Trials-Clean,th,0,TA_clean.mp3,t,a,clean
+10768523,Trials-Clean,audio started,0,PU_clean.mp3,p,u,clean
+10768523,Trials-Clean,audio finished,0,PU_clean.mp3,p,u,clean
+10768523,Trials-Clean,h,0,PU_clean.mp3,p,u,clean
+10768523,Trials-Clean,audio started,0,HA_clean.mp3,h,a,clean
+10768523,Trials-Clean,audio finished,0,HA_clean.mp3,h,a,clean
+10768523,Trials-Clean,h,1,HA_clean.mp3,h,a,clean
+10768523,Trials-Clean,audio started,0,KI_clean.mp3,k,i,clean
+10768523,Trials-Clean,audio finished,0,KI_clean.mp3,k,i,clean
+10768523,Trials-Clean,k,1,KI_clean.mp3,k,i,clean
+10768523,Trials-Clean,audio started,0,THA_clean.mp3,th,a,clean
+10768523,Trials-Clean,audio finished,0,THA_clean.mp3,th,a,clean
+10768523,Trials-Clean,th,1,THA_clean.mp3,th,a,clean
+10768523,Trials-Clean,audio started,0,KA_clean.mp3,k,a,clean
+10768523,Trials-Clean,audio finished,0,KA_clean.mp3,k,a,clean
+10768523,Trials-Clean,k,1,KA_clean.mp3,k,a,clean
+10768523,Trials-Clean,audio started,0,HU_clean.mp3,h,u,clean
+10768523,Trials-Clean,audio finished,0,HU_clean.mp3,h,u,clean
+10768523,Trials-Clean,h,1,HU_clean.mp3,h,u,clean
+10768523,Trials-Clean,audio started,0,HA_clean.mp3,h,a,clean
+10768523,Trials-Clean,audio finished,0,HA_clean.mp3,h,a,clean
+10768523,Trials-Clean,h,1,HA_clean.mp3,h,a,clean
+10768523,Trials-Clean,audio started,0,KI_clean.mp3,k,i,clean
+10768523,Trials-Clean,audio finished,0,KI_clean.mp3,k,i,clean
+10768523,Trials-Clean,k,1,KI_clean.mp3,k,i,clean
+10768523,Trials-Clean,audio started,0,KA_clean.mp3,k,a,clean
+10768523,Trials-Clean,audio finished,0,KA_clean.mp3,k,a,clean
+10768523,Trials-Clean,k,1,KA_clean.mp3,k,a,clean
+10768523,Trials-Clean,audio started,0,HU_clean.mp3,h,u,clean
+10768523,Trials-Clean,audio finished,0,HU_clean.mp3,h,u,clean
+10768523,Trials-Clean,h,1,HU_clean.mp3,h,u,clean
+10768523,Trials-Clean,audio started,0,PA_clean.mp3,p,a,clean
+10768523,Trials-Clean,audio finished,0,PA_clean.mp3,p,a,clean
+10768523,Trials-Clean,p,1,PA_clean.mp3,p,a,clean
+10768523,Trials-Clean,audio started,0,PI_clean.mp3,p,i,clean
+10768523,Trials-Clean,audio finished,0,PI_clean.mp3,p,i,clean
+10768523,Trials-Clean,p,1,PI_clean.mp3,p,i,clean
+10768523,Trials-Clean,audio started,0,TU_clean.mp3,t,u,clean
+10768523,Trials-Clean,audio finished,0,TU_clean.mp3,t,u,clean
+10768523,Trials-Clean,t,1,TU_clean.mp3,t,u,clean
+10768523,Trials-Clean,audio started,0,THI_clean.mp3,th,i,clean
+10768523,Trials-Clean,audio finished,0,THI_clean.mp3,th,i,clean
+10768523,Trials-Clean,th,1,THI_clean.mp3,th,i,clean
+10768523,Trials-Clean,audio started,0,TA_clean.mp3,t,a,clean
+10768523,Trials-Clean,audio finished,0,TA_clean.mp3,t,a,clean
+10768523,Trials-Clean,th,0,TA_clean.mp3,t,a,clean
+10768523,Trials-Clean,audio started,0,TU_clean.mp3,t,u,clean
+10768523,Trials-Clean,audio finished,0,TU_clean.mp3,t,u,clean
+10768523,Trials-Clean,t,1,TU_clean.mp3,t,u,clean
+10768523,Trials-Clean,audio started,0,PA_clean.mp3,p,a,clean
+10768523,Trials-Clean,audio finished,0,PA_clean.mp3,p,a,clean
+10768523,Trials-Clean,p,1,PA_clean.mp3,p,a,clean
+10768523,Trials-Clean,audio started,0,PI_clean.mp3,p,i,clean
+10768523,Trials-Clean,audio finished,0,PI_clean.mp3,p,i,clean
+10768523,Trials-Clean,h,0,PI_clean.mp3,p,i,clean
+10768523,Trials-Clean,audio started,0,KU_clean.mp3,k,u,clean
+10768523,Trials-Clean,audio finished,0,KU_clean.mp3,k,u,clean
+10768523,Trials-Clean,k,1,KU_clean.mp3,k,u,clean
+10768523,Trials-Clean,audio started,0,THU_clean.mp3,th,u,clean
+10768523,Trials-Clean,audio finished,0,THU_clean.mp3,th,u,clean
+10768523,Trials-Clean,th,1,THU_clean.mp3,th,u,clean
+10768523,Trials-Clean,audio started,0,HU_clean.mp3,h,u,clean
+10768523,Trials-Clean,audio finished,0,HU_clean.mp3,h,u,clean
+10768523,Trials-Clean,h,1,HU_clean.mp3,h,u,clean
+10768523,Trials-Clean,audio started,0,KU_clean.mp3,k,u,clean
+10768523,Trials-Clean,audio finished,0,KU_clean.mp3,k,u,clean
+10768523,Trials-Clean,k,1,KU_clean.mp3,k,u,clean
+10768523,Trials-Clean,audio started,0,TU_clean.mp3,t,u,clean
+10768523,Trials-Clean,audio finished,0,TU_clean.mp3,t,u,clean
+10768523,Trials-Clean,t,1,TU_clean.mp3,t,u,clean
+10768523,Trials-Clean,audio started,0,THU_clean.mp3,th,u,clean
+10768523,Trials-Clean,audio finished,0,THU_clean.mp3,th,u,clean
+10768523,Trials-Clean,th,1,THU_clean.mp3,th,u,clean
+10768523,Trials-Clean,audio started,0,HI_clean.mp3,h,i,clean
+10768523,Trials-Clean,audio finished,0,HI_clean.mp3,h,i,clean
+10768523,Trials-Clean,h,1,HI_clean.mp3,h,i,clean
+10768523,Trials-Clean,audio started,0,TA_clean.mp3,t,a,clean
+10768523,Trials-Clean,audio finished,0,TA_clean.mp3,t,a,clean
+10768523,Trials-Clean,th,0,TA_clean.mp3,t,a,clean
+10768523,Trials-Clean,audio started,0,TI_clean.mp3,t,i,clean
+10768523,Trials-Clean,audio finished,0,TI_clean.mp3,t,i,clean
+10768523,Trials-Clean,th,0,TI_clean.mp3,t,i,clean
+10768523,Trials-Clean,audio started,0,THU_clean.mp3,th,u,clean
+10768523,Trials-Clean,audio finished,0,THU_clean.mp3,th,u,clean
+10768523,Trials-Clean,th,1,THU_clean.mp3,th,u,clean
+10768523,Trials-Clean,audio started,0,PU_clean.mp3,p,u,clean
+10768523,Trials-Clean,audio finished,0,PU_clean.mp3,p,u,clean
+10768523,Trials-Clean,h,0,PU_clean.mp3,p,u,clean
+10768523,Trials-Clean,audio started,0,PU_clean.mp3,p,u,clean
+10768523,Trials-Clean,audio finished,0,PU_clean.mp3,p,u,clean
+10768523,Trials-Clean,p,1,PU_clean.mp3,p,u,clean
+10768523,Break,,1,,,,
+10768523,Instructions-Noise,,1,,,,
+10768523,Trials-Noise,audio started,0,THA_SNR7.mp3,th,a,noise
+10768523,Trials-Noise,audio finished,0,THA_SNR7.mp3,th,a,noise
+10768523,Trials-Noise,th,1,THA_SNR7.mp3,th,a,noise
+10768523,Trials-Noise,audio started,0,KA_SNR7.mp3,k,a,noise
+10768523,Trials-Noise,audio finished,0,KA_SNR7.mp3,k,a,noise
+10768523,Trials-Noise,k,1,KA_SNR7.mp3,k,a,noise
+10768523,Trials-Noise,audio started,0,PU_SNR7.mp3,p,u,noise
+10768523,Trials-Noise,audio finished,0,PU_SNR7.mp3,p,u,noise
+10768523,Trials-Noise,h,0,PU_SNR7.mp3,p,u,noise
+10768523,Trials-Noise,audio started,0,TA_SNR7.mp3,t,a,noise
+10768523,Trials-Noise,audio finished,0,TA_SNR7.mp3,t,a,noise
+10768523,Trials-Noise,th,0,TA_SNR7.mp3,t,a,noise
+10768523,Trials-Noise,audio started,0,PA_SNR7.mp3,p,a,noise
+10768523,Trials-Noise,audio finished,0,PA_SNR7.mp3,p,a,noise
+10768523,Trials-Noise,h,0,PA_SNR7.mp3,p,a,noise
+10768523,Trials-Noise,audio started,0,KU_SNR7.mp3,k,u,noise
+10768523,Trials-Noise,audio finished,0,KU_SNR7.mp3,k,u,noise
+10768523,Trials-Noise,p,0,KU_SNR7.mp3,k,u,noise
+10768523,Trials-Noise,audio started,0,THU_SNR7.mp3,th,u,noise
+10768523,Trials-Noise,audio finished,0,THU_SNR7.mp3,th,u,noise
+10768523,Trials-Noise,th,1,THU_SNR7.mp3,th,u,noise
+10768523,Trials-Noise,audio started,0,TI_SNR7.mp3,t,i,noise
+10768523,Trials-Noise,audio finished,0,TI_SNR7.mp3,t,i,noise
+10768523,Trials-Noise,th,0,TI_SNR7.mp3,t,i,noise
+10768523,Trials-Noise,audio started,0,PI_SNR7.mp3,p,i,noise
+10768523,Trials-Noise,audio finished,0,PI_SNR7.mp3,p,i,noise
+10768523,Trials-Noise,th,0,PI_SNR7.mp3,p,i,noise
+10768523,Trials-Noise,audio started,0,THA_SNR7.mp3,th,a,noise
+10768523,Trials-Noise,audio finished,0,THA_SNR7.mp3,th,a,noise
+10768523,Trials-Noise,th,1,THA_SNR7.mp3,th,a,noise
+10768523,Trials-Noise,audio started,0,HI_SNR7.mp3,h,i,noise
+10768523,Trials-Noise,audio finished,0,HI_SNR7.mp3,h,i,noise
+10768523,Trials-Noise,th,0,HI_SNR7.mp3,h,i,noise
+10768523,Trials-Noise,audio started,0,THU_SNR7.mp3,th,u,noise
+10768523,Trials-Noise,audio finished,0,THU_SNR7.mp3,th,u,noise
+10768523,Trials-Noise,th,1,THU_SNR7.mp3,th,u,noise
+10768523,Trials-Noise,audio started,0,PI_SNR7.mp3,p,i,noise
+10768523,Trials-Noise,audio finished,0,PI_SNR7.mp3,p,i,noise
+10768523,Trials-Noise,h,0,PI_SNR7.mp3,p,i,noise
+10768523,Trials-Noise,audio started,0,TA_SNR7.mp3,t,a,noise
+10768523,Trials-Noise,audio finished,0,TA_SNR7.mp3,t,a,noise
+10768523,Trials-Noise,th,0,TA_SNR7.mp3,t,a,noise
+10768523,Trials-Noise,audio started,0,KA_SNR7.mp3,k,a,noise
+10768523,Trials-Noise,audio finished,0,KA_SNR7.mp3,k,a,noise
+10768523,Trials-Noise,th,0,KA_SNR7.mp3,k,a,noise
+10768523,Trials-Noise,audio started,0,TU_SNR7.mp3,t,u,noise
+10768523,Trials-Noise,audio finished,0,TU_SNR7.mp3,t,u,noise
+10768523,Trials-Noise,h,0,TU_SNR7.mp3,t,u,noise
+10768523,Trials-Noise,audio started,0,TU_SNR7.mp3,t,u,noise
+10768523,Trials-Noise,audio finished,0,TU_SNR7.mp3,t,u,noise
+10768523,Trials-Noise,th,0,TU_SNR7.mp3,t,u,noise
+10768523,Trials-Noise,audio started,0,PU_SNR7.mp3,p,u,noise
+10768523,Trials-Noise,audio finished,0,PU_SNR7.mp3,p,u,noise
+10768523,Trials-Noise,th,0,PU_SNR7.mp3,p,u,noise
+10768523,Trials-Noise,audio started,0,TA_SNR7.mp3,t,a,noise
+10768523,Trials-Noise,audio finished,0,TA_SNR7.mp3,t,a,noise
+10768523,Trials-Noise,th,0,TA_SNR7.mp3,t,a,noise
+10768523,Trials-Noise,audio started,0,KU_SNR7.mp3,k,u,noise
+10768523,Trials-Noise,audio finished,0,KU_SNR7.mp3,k,u,noise
+10768523,Trials-Noise,th,0,KU_SNR7.mp3,k,u,noise
+10768523,Trials-Noise,audio started,0,KI_SNR7.mp3,k,i,noise
+10768523,Trials-Noise,audio finished,0,KI_SNR7.mp3,k,i,noise
+10768523,Trials-Noise,k,1,KI_SNR7.mp3,k,i,noise
+10768523,Trials-Noise,audio started,0,KA_SNR7.mp3,k,a,noise
+10768523,Trials-Noise,audio finished,0,KA_SNR7.mp3,k,a,noise
+10768523,Trials-Noise,k,1,KA_SNR7.mp3,k,a,noise
+10768523,Trials-Noise,audio started,0,HA_SNR7.mp3,h,a,noise
+10768523,Trials-Noise,audio finished,0,HA_SNR7.mp3,h,a,noise
+10768523,Trials-Noise,h,1,HA_SNR7.mp3,h,a,noise
+10768523,Trials-Noise,audio started,0,PA_SNR7.mp3,p,a,noise
+10768523,Trials-Noise,audio finished,0,PA_SNR7.mp3,p,a,noise
+10768523,Trials-Noise,h,0,PA_SNR7.mp3,p,a,noise
+10768523,Trials-Noise,audio started,0,KU_SNR7.mp3,k,u,noise
+10768523,Trials-Noise,audio finished,0,KU_SNR7.mp3,k,u,noise
+10768523,Trials-Noise,k,1,KU_SNR7.mp3,k,u,noise
+10768523,Trials-Noise,audio started,0,THA_SNR7.mp3,th,a,noise
+10768523,Trials-Noise,audio finished,0,THA_SNR7.mp3,th,a,noise
+10768523,Trials-Noise,th,1,THA_SNR7.mp3,th,a,noise
+10768523,Trials-Noise,audio started,0,HA_SNR7.mp3,h,a,noise
+10768523,Trials-Noise,audio finished,0,HA_SNR7.mp3,h,a,noise
+10768523,Trials-Noise,k,0,HA_SNR7.mp3,h,a,noise
+10768523,Trials-Noise,audio started,0,THU_SNR7.mp3,th,u,noise
+10768523,Trials-Noise,audio finished,0,THU_SNR7.mp3,th,u,noise
+10768523,Trials-Noise,th,1,THU_SNR7.mp3,th,u,noise
+10768523,Trials-Noise,audio started,0,THI_SNR7.mp3,th,i,noise
+10768523,Trials-Noise,audio finished,0,THI_SNR7.mp3,th,i,noise
+10768523,Trials-Noise,th,1,THI_SNR7.mp3,th,i,noise
+10768523,Trials-Noise,audio started,0,PI_SNR7.mp3,p,i,noise
+10768523,Trials-Noise,audio finished,0,PI_SNR7.mp3,p,i,noise
+10768523,Trials-Noise,th,0,PI_SNR7.mp3,p,i,noise
+10768523,Trials-Noise,audio started,0,HU_SNR7.mp3,h,u,noise
+10768523,Trials-Noise,audio finished,0,HU_SNR7.mp3,h,u,noise
+10768523,Trials-Noise,k,0,HU_SNR7.mp3,h,u,noise
+10768523,Trials-Noise,audio started,0,TI_SNR7.mp3,t,i,noise
+10768523,Trials-Noise,audio finished,0,TI_SNR7.mp3,t,i,noise
+10768523,Trials-Noise,th,0,TI_SNR7.mp3,t,i,noise
+10768523,Trials-Noise,audio started,0,PU_SNR7.mp3,p,u,noise
+10768523,Trials-Noise,audio finished,0,PU_SNR7.mp3,p,u,noise
+10768523,Trials-Noise,k,0,PU_SNR7.mp3,p,u,noise
+10768523,Trials-Noise,audio started,0,TU_SNR7.mp3,t,u,noise
+10768523,Trials-Noise,audio finished,0,TU_SNR7.mp3,t,u,noise
+10768523,Trials-Noise,th,0,TU_SNR7.mp3,t,u,noise
+10768523,Trials-Noise,audio started,0,THI_SNR7.mp3,th,i,noise
+10768523,Trials-Noise,audio finished,0,THI_SNR7.mp3,th,i,noise
+10768523,Trials-Noise,th,1,THI_SNR7.mp3,th,i,noise
+10768523,Trials-Noise,audio started,0,TI_SNR7.mp3,t,i,noise
+10768523,Trials-Noise,audio finished,0,TI_SNR7.mp3,t,i,noise
+10768523,Trials-Noise,th,0,TI_SNR7.mp3,t,i,noise
+10768523,Trials-Noise,audio started,0,KI_SNR7.mp3,k,i,noise
+10768523,Trials-Noise,audio finished,0,KI_SNR7.mp3,k,i,noise
+10768523,Trials-Noise,k,1,KI_SNR7.mp3,k,i,noise
+10768523,Trials-Noise,audio started,0,PA_SNR7.mp3,p,a,noise
+10768523,Trials-Noise,audio finished,0,PA_SNR7.mp3,p,a,noise
+10768523,Trials-Noise,h,0,PA_SNR7.mp3,p,a,noise
+10768523,Trials-Noise,audio started,0,HU_SNR7.mp3,h,u,noise
+10768523,Trials-Noise,audio finished,0,HU_SNR7.mp3,h,u,noise
+10768523,Trials-Noise,k,0,HU_SNR7.mp3,h,u,noise
+10768523,Trials-Noise,audio started,0,HI_SNR7.mp3,h,i,noise
+10768523,Trials-Noise,audio finished,0,HI_SNR7.mp3,h,i,noise
+10768523,Trials-Noise,h,1,HI_SNR7.mp3,h,i,noise
+10768523,Trials-Noise,audio started,0,HU_SNR7.mp3,h,u,noise
+10768523,Trials-Noise,audio finished,0,HU_SNR7.mp3,h,u,noise
+10768523,Trials-Noise,k,0,HU_SNR7.mp3,h,u,noise
+10768523,Trials-Noise,audio started,0,KI_SNR7.mp3,k,i,noise
+10768523,Trials-Noise,audio finished,0,KI_SNR7.mp3,k,i,noise
+10768523,Trials-Noise,k,1,KI_SNR7.mp3,k,i,noise
+10768523,Trials-Noise,audio started,0,THI_SNR7.mp3,th,i,noise
+10768523,Trials-Noise,audio finished,0,THI_SNR7.mp3,th,i,noise
+10768523,Trials-Noise,k,0,THI_SNR7.mp3,th,i,noise
+10768523,Trials-Noise,audio started,0,HA_SNR7.mp3,h,a,noise
+10768523,Trials-Noise,audio finished,0,HA_SNR7.mp3,h,a,noise
+10768523,Trials-Noise,h,1,HA_SNR7.mp3,h,a,noise
+10768523,Trials-Noise,audio started,0,HI_SNR7.mp3,h,i,noise
+10768523,Trials-Noise,audio finished,0,HI_SNR7.mp3,h,i,noise
+10768523,Trials-Noise,h,1,HI_SNR7.mp3,h,i,noise
+10768523,End,,1,,,,
+10768523,End,,1,,,,
+10768523,End,,1,,,,
+10768523,End,6374725705@ibl,1,,,,
+10768523,End,presiaravinth003@gmail.com,1,,,,
+10768523,End,ARAVINTHA KUMAR.C,1,,,,
+10768523,End,23/02/1999,1,,,,
+10768523,,END,0,,,,
+10768665,,START SUBSYSTEM base.component.audioSubsystem,0,,,,
+10768665,,SUBSYSTEM READY base.component.audioSubsystem,0,,,,
+10768665,,BEGIN,0,,,,
+10768665,Instructions,,1,,,,
+10768665,Instructions,,1,,,,
+10768665,Practice,audio started,0,PI_clean.mp3,p,i,clean
+10768665,Practice,audio finished,0,PI_clean.mp3,p,i,clean
+10768665,Practice,t,0,PI_clean.mp3,p,i,clean
+10768665,Practice,audio started,0,KU_clean.mp3,k,u,clean
+10768665,Practice,p,0,KU_clean.mp3,k,u,clean
+10768665,Practice,audio finished,0,KU_clean.mp3,k,u,clean
+10768665,Practice,audio started,0,HA_clean.mp3,h,a,clean
+10768665,Practice,audio finished,0,HA_clean.mp3,h,a,clean
+10768665,Practice,k,0,HA_clean.mp3,h,a,clean
+10768665,Ready?,,1,,,,
+10768665,Trials-Clean,audio started,0,HU_clean.mp3,h,u,clean
+10768665,Trials-Clean,audio finished,0,HU_clean.mp3,h,u,clean
+10768665,Trials-Clean,t,0,HU_clean.mp3,h,u,clean
+10768665,Trials-Clean,audio started,0,HI_clean.mp3,h,i,clean
+10768665,Trials-Clean,t,0,HI_clean.mp3,h,i,clean
+10768665,Trials-Clean,audio finished,0,HI_clean.mp3,h,i,clean
+10768665,Trials-Clean,audio started,0,TA_clean.mp3,t,a,clean
+10768665,Trials-Clean,audio finished,0,TA_clean.mp3,t,a,clean
+10768665,Trials-Clean,p,0,TA_clean.mp3,t,a,clean
+10768665,Trials-Clean,audio started,0,KI_clean.mp3,k,i,clean
+10768665,Trials-Clean,audio finished,0,KI_clean.mp3,k,i,clean
+10768665,Trials-Clean,th,0,KI_clean.mp3,k,i,clean
+10768665,Trials-Clean,audio started,0,KA_clean.mp3,k,a,clean
+10768665,Trials-Clean,audio finished,0,KA_clean.mp3,k,a,clean
+10768665,Trials-Clean,t,0,KA_clean.mp3,k,a,clean
+10768665,Trials-Clean,audio started,0,HA_clean.mp3,h,a,clean
+10768665,Trials-Clean,audio finished,0,HA_clean.mp3,h,a,clean
+10768665,Trials-Clean,k,0,HA_clean.mp3,h,a,clean
+10768665,Trials-Clean,audio started,0,TI_clean.mp3,t,i,clean
+10768665,Trials-Clean,h,0,TI_clean.mp3,t,i,clean
+10768665,Trials-Clean,audio finished,0,TI_clean.mp3,t,i,clean
+10768665,Trials-Clean,audio started,0,HU_clean.mp3,h,u,clean
+10768665,Trials-Clean,audio finished,0,HU_clean.mp3,h,u,clean
+10768665,Trials-Clean,t,0,HU_clean.mp3,h,u,clean
+10768665,Trials-Clean,audio started,0,PI_clean.mp3,p,i,clean
+10768665,Trials-Clean,audio finished,0,PI_clean.mp3,p,i,clean
+10768665,Trials-Clean,p,1,PI_clean.mp3,p,i,clean
+10768665,Trials-Clean,audio started,0,HI_clean.mp3,h,i,clean
+10768665,Trials-Clean,audio finished,0,HI_clean.mp3,h,i,clean
+10768665,Trials-Clean,h,1,HI_clean.mp3,h,i,clean
+10768665,Trials-Clean,audio started,0,HI_clean.mp3,h,i,clean
+10768665,Trials-Clean,audio finished,0,HI_clean.mp3,h,i,clean
+10768665,Trials-Clean,h,1,HI_clean.mp3,h,i,clean
+10768665,Trials-Clean,audio started,0,THA_clean.mp3,th,a,clean
+10768665,Trials-Clean,audio finished,0,THA_clean.mp3,th,a,clean
+10768665,Trials-Clean,th,1,THA_clean.mp3,th,a,clean
+10768665,Trials-Clean,audio started,0,HA_clean.mp3,h,a,clean
+10768665,Trials-Clean,audio finished,0,HA_clean.mp3,h,a,clean
+10768665,Trials-Clean,h,1,HA_clean.mp3,h,a,clean
+10768665,Trials-Clean,audio started,0,PA_clean.mp3,p,a,clean
+10768665,Trials-Clean,audio finished,0,PA_clean.mp3,p,a,clean
+10768665,Trials-Clean,h,0,PA_clean.mp3,p,a,clean
+10768665,Trials-Clean,audio started,0,THU_clean.mp3,th,u,clean
+10768665,Trials-Clean,audio finished,0,THU_clean.mp3,th,u,clean
+10768665,Trials-Clean,h,0,THU_clean.mp3,th,u,clean
+10768665,Trials-Clean,audio started,0,PA_clean.mp3,p,a,clean
+10768665,Trials-Clean,audio finished,0,PA_clean.mp3,p,a,clean
+10768665,Trials-Clean,h,0,PA_clean.mp3,p,a,clean
+10768665,Trials-Clean,audio started,0,THI_clean.mp3,th,i,clean
+10768665,Trials-Clean,audio finished,0,THI_clean.mp3,th,i,clean
+10768665,Trials-Clean,th,1,THI_clean.mp3,th,i,clean
+10768665,Trials-Clean,audio started,0,PI_clean.mp3,p,i,clean
+10768665,Trials-Clean,audio finished,0,PI_clean.mp3,p,i,clean
+10768665,Trials-Clean,k,0,PI_clean.mp3,p,i,clean
+10768665,Trials-Clean,audio started,0,KA_clean.mp3,k,a,clean
+10768665,Trials-Clean,audio finished,0,KA_clean.mp3,k,a,clean
+10768665,Trials-Clean,k,1,KA_clean.mp3,k,a,clean
+10768665,Trials-Clean,audio started,0,TA_clean.mp3,t,a,clean
+10768665,Trials-Clean,audio finished,0,TA_clean.mp3,t,a,clean
+10768665,Trials-Clean,t,1,TA_clean.mp3,t,a,clean
+10768665,Trials-Clean,audio started,0,THA_clean.mp3,th,a,clean
+10768665,Trials-Clean,audio finished,0,THA_clean.mp3,th,a,clean
+10768665,Trials-Clean,th,1,THA_clean.mp3,th,a,clean
+10768665,Trials-Clean,audio started,0,HU_clean.mp3,h,u,clean
+10768665,Trials-Clean,audio finished,0,HU_clean.mp3,h,u,clean
+10768665,Trials-Clean,th,0,HU_clean.mp3,h,u,clean
+10768665,Trials-Clean,audio started,0,KI_clean.mp3,k,i,clean
+10768665,Trials-Clean,audio finished,0,KI_clean.mp3,k,i,clean
+10768665,Trials-Clean,k,1,KI_clean.mp3,k,i,clean
+10768665,Trials-Clean,audio started,0,KU_clean.mp3,k,u,clean
+10768665,Trials-Clean,audio finished,0,KU_clean.mp3,k,u,clean
+10768665,Trials-Clean,k,1,KU_clean.mp3,k,u,clean
+10768665,Trials-Clean,audio started,0,TU_clean.mp3,t,u,clean
+10768665,Trials-Clean,audio finished,0,TU_clean.mp3,t,u,clean
+10768665,Trials-Clean,t,1,TU_clean.mp3,t,u,clean
+10768665,Trials-Clean,audio started,0,PI_clean.mp3,p,i,clean
+10768665,Trials-Clean,audio finished,0,PI_clean.mp3,p,i,clean
+10768665,Trials-Clean,th,0,PI_clean.mp3,p,i,clean
+10768665,Trials-Clean,audio started,0,THI_clean.mp3,th,i,clean
+10768665,Trials-Clean,audio finished,0,THI_clean.mp3,th,i,clean
+10768665,Trials-Clean,th,1,THI_clean.mp3,th,i,clean
+10768665,Trials-Clean,audio started,0,PU_clean.mp3,p,u,clean
+10768665,Trials-Clean,audio finished,0,PU_clean.mp3,p,u,clean
+10768665,Trials-Clean,th,0,PU_clean.mp3,p,u,clean
+10768665,Trials-Clean,audio started,0,HA_clean.mp3,h,a,clean
+10768665,Trials-Clean,audio finished,0,HA_clean.mp3,h,a,clean
+10768665,Trials-Clean,h,1,HA_clean.mp3,h,a,clean
+10768665,Trials-Clean,audio started,0,THI_clean.mp3,th,i,clean
+10768665,Trials-Clean,audio finished,0,THI_clean.mp3,th,i,clean
+10768665,Trials-Clean,th,1,THI_clean.mp3,th,i,clean
+10768665,Trials-Clean,audio started,0,KU_clean.mp3,k,u,clean
+10768665,Trials-Clean,audio finished,0,KU_clean.mp3,k,u,clean
+10768665,Trials-Clean,th,0,KU_clean.mp3,k,u,clean
+10768665,Trials-Clean,audio started,0,PA_clean.mp3,p,a,clean
+10768665,Trials-Clean,audio finished,0,PA_clean.mp3,p,a,clean
+10768665,Trials-Clean,h,0,PA_clean.mp3,p,a,clean
+10768665,Trials-Clean,audio started,0,KU_clean.mp3,k,u,clean
+10768665,Trials-Clean,audio finished,0,KU_clean.mp3,k,u,clean
+10768665,Trials-Clean,h,0,KU_clean.mp3,k,u,clean
+10768665,Trials-Clean,audio started,0,TI_clean.mp3,t,i,clean
+10768665,Trials-Clean,audio finished,0,TI_clean.mp3,t,i,clean
+10768665,Trials-Clean,t,1,TI_clean.mp3,t,i,clean
+10768665,Trials-Clean,audio started,0,PU_clean.mp3,p,u,clean
+10768665,Trials-Clean,t,0,PU_clean.mp3,p,u,clean
+10768665,Trials-Clean,audio finished,0,PU_clean.mp3,p,u,clean
+10768665,Trials-Clean,audio started,0,TI_clean.mp3,t,i,clean
+10768665,Trials-Clean,t,1,TI_clean.mp3,t,i,clean
+10768665,Trials-Clean,audio finished,0,TI_clean.mp3,t,i,clean
+10768665,Trials-Clean,audio started,0,TU_clean.mp3,t,u,clean
+10768665,Trials-Clean,t,1,TU_clean.mp3,t,u,clean
+10768665,Trials-Clean,audio finished,0,TU_clean.mp3,t,u,clean
+10768665,Trials-Clean,audio started,0,TU_clean.mp3,t,u,clean
+10768665,Trials-Clean,audio finished,0,TU_clean.mp3,t,u,clean
+10768665,Trials-Clean,t,1,TU_clean.mp3,t,u,clean
+10768665,Trials-Clean,audio started,0,TA_clean.mp3,t,a,clean
+10768665,Trials-Clean,audio finished,0,TA_clean.mp3,t,a,clean
+10768665,Trials-Clean,t,1,TA_clean.mp3,t,a,clean
+10768665,Trials-Clean,audio started,0,KA_clean.mp3,k,a,clean
+10768665,Trials-Clean,audio finished,0,KA_clean.mp3,k,a,clean
+10768665,Trials-Clean,k,1,KA_clean.mp3,k,a,clean
+10768665,Trials-Clean,audio started,0,PU_clean.mp3,p,u,clean
+10768665,Trials-Clean,audio finished,0,PU_clean.mp3,p,u,clean
+10768665,Trials-Clean,k,0,PU_clean.mp3,p,u,clean
+10768665,Trials-Clean,audio started,0,KI_clean.mp3,k,i,clean
+10768665,Trials-Clean,audio finished,0,KI_clean.mp3,k,i,clean
+10768665,Trials-Clean,k,1,KI_clean.mp3,k,i,clean
+10768665,Trials-Clean,audio started,0,THU_clean.mp3,th,u,clean
+10768665,Trials-Clean,audio finished,0,THU_clean.mp3,th,u,clean
+10768665,Trials-Clean,th,1,THU_clean.mp3,th,u,clean
+10768665,Trials-Clean,audio started,0,THU_clean.mp3,th,u,clean
+10768665,Trials-Clean,audio finished,0,THU_clean.mp3,th,u,clean
+10768665,Trials-Clean,th,1,THU_clean.mp3,th,u,clean
+10768665,Trials-Clean,audio started,0,THA_clean.mp3,th,a,clean
+10768665,Trials-Clean,audio finished,0,THA_clean.mp3,th,a,clean
+10768665,Trials-Clean,th,1,THA_clean.mp3,th,a,clean
+10768665,Break,,1,,,,
+10768665,Instructions-Noise,,1,,,,
+10768665,Trials-Noise,audio started,0,THA_SNR7.mp3,th,a,noise
+10768665,Trials-Noise,audio finished,0,THA_SNR7.mp3,th,a,noise
+10768665,Trials-Noise,th,1,THA_SNR7.mp3,th,a,noise
+10768665,Trials-Noise,audio started,0,HI_SNR7.mp3,h,i,noise
+10768665,Trials-Noise,audio finished,0,HI_SNR7.mp3,h,i,noise
+10768665,Trials-Noise,th,0,HI_SNR7.mp3,h,i,noise
+10768665,Trials-Noise,audio started,0,TU_SNR7.mp3,t,u,noise
+10768665,Trials-Noise,audio finished,0,TU_SNR7.mp3,t,u,noise
+10768665,Trials-Noise,k,0,TU_SNR7.mp3,t,u,noise
+10768665,Trials-Noise,audio started,0,HA_SNR7.mp3,h,a,noise
+10768665,Trials-Noise,audio finished,0,HA_SNR7.mp3,h,a,noise
+10768665,Trials-Noise,h,1,HA_SNR7.mp3,h,a,noise
+10768665,Trials-Noise,audio started,0,THU_SNR7.mp3,th,u,noise
+10768665,Trials-Noise,audio finished,0,THU_SNR7.mp3,th,u,noise
+10768665,Trials-Noise,th,1,THU_SNR7.mp3,th,u,noise
+10768665,Trials-Noise,audio started,0,KA_SNR7.mp3,k,a,noise
+10768665,Trials-Noise,audio finished,0,KA_SNR7.mp3,k,a,noise
+10768665,Trials-Noise,k,1,KA_SNR7.mp3,k,a,noise
+10768665,Trials-Noise,audio started,0,TU_SNR7.mp3,t,u,noise
+10768665,Trials-Noise,audio finished,0,TU_SNR7.mp3,t,u,noise
+10768665,Trials-Noise,t,1,TU_SNR7.mp3,t,u,noise
+10768665,Trials-Noise,audio started,0,PU_SNR7.mp3,p,u,noise
+10768665,Trials-Noise,audio finished,0,PU_SNR7.mp3,p,u,noise
+10768665,Trials-Noise,h,0,PU_SNR7.mp3,p,u,noise
+10768665,Trials-Noise,audio started,0,HU_SNR7.mp3,h,u,noise
+10768665,Trials-Noise,audio finished,0,HU_SNR7.mp3,h,u,noise
+10768665,Trials-Noise,h,1,HU_SNR7.mp3,h,u,noise
+10768665,Trials-Noise,audio started,0,TI_SNR7.mp3,t,i,noise
+10768665,Trials-Noise,audio finished,0,TI_SNR7.mp3,t,i,noise
+10768665,Trials-Noise,th,0,TI_SNR7.mp3,t,i,noise
+10768665,Trials-Noise,audio started,0,PU_SNR7.mp3,p,u,noise
+10768665,Trials-Noise,audio finished,0,PU_SNR7.mp3,p,u,noise
+10768665,Trials-Noise,th,0,PU_SNR7.mp3,p,u,noise
+10768665,Trials-Noise,audio started,0,KA_SNR7.mp3,k,a,noise
+10768665,Trials-Noise,audio finished,0,KA_SNR7.mp3,k,a,noise
+10768665,Trials-Noise,k,1,KA_SNR7.mp3,k,a,noise
+10768665,Trials-Noise,audio started,0,KA_SNR7.mp3,k,a,noise
+10768665,Trials-Noise,audio finished,0,KA_SNR7.mp3,k,a,noise
+10768665,Trials-Noise,k,1,KA_SNR7.mp3,k,a,noise
+10768665,Trials-Noise,audio started,0,HA_SNR7.mp3,h,a,noise
+10768665,Trials-Noise,audio finished,0,HA_SNR7.mp3,h,a,noise
+10768665,Trials-Noise,h,1,HA_SNR7.mp3,h,a,noise
+10768665,Trials-Noise,audio started,0,TU_SNR7.mp3,t,u,noise
+10768665,Trials-Noise,audio finished,0,TU_SNR7.mp3,t,u,noise
+10768665,Trials-Noise,t,1,TU_SNR7.mp3,t,u,noise
+10768665,Trials-Noise,audio started,0,KU_SNR7.mp3,k,u,noise
+10768665,Trials-Noise,audio finished,0,KU_SNR7.mp3,k,u,noise
+10768665,Trials-Noise,p,0,KU_SNR7.mp3,k,u,noise
+10768665,Trials-Noise,audio started,0,PI_SNR7.mp3,p,i,noise
+10768665,Trials-Noise,audio finished,0,PI_SNR7.mp3,p,i,noise
+10768665,Trials-Noise,p,1,PI_SNR7.mp3,p,i,noise
+10768665,Trials-Noise,audio started,0,THU_SNR7.mp3,th,u,noise
+10768665,Trials-Noise,audio finished,0,THU_SNR7.mp3,th,u,noise
+10768665,Trials-Noise,th,1,THU_SNR7.mp3,th,u,noise
+10768665,Trials-Noise,audio started,0,PA_SNR7.mp3,p,a,noise
+10768665,Trials-Noise,audio finished,0,PA_SNR7.mp3,p,a,noise
+10768665,Trials-Noise,h,0,PA_SNR7.mp3,p,a,noise
+10768665,Trials-Noise,audio started,0,KU_SNR7.mp3,k,u,noise
+10768665,Trials-Noise,audio finished,0,KU_SNR7.mp3,k,u,noise
+10768665,Trials-Noise,t,0,KU_SNR7.mp3,k,u,noise
+10768665,Trials-Noise,audio started,0,HA_SNR7.mp3,h,a,noise
+10768665,Trials-Noise,audio finished,0,HA_SNR7.mp3,h,a,noise
+10768665,Trials-Noise,h,1,HA_SNR7.mp3,h,a,noise
+10768665,Trials-Noise,audio started,0,TI_SNR7.mp3,t,i,noise
+10768665,Trials-Noise,audio finished,0,TI_SNR7.mp3,t,i,noise
+10768665,Trials-Noise,th,0,TI_SNR7.mp3,t,i,noise
+10768665,Trials-Noise,audio started,0,HU_SNR7.mp3,h,u,noise
+10768665,Trials-Noise,audio finished,0,HU_SNR7.mp3,h,u,noise
+10768665,Trials-Noise,t,0,HU_SNR7.mp3,h,u,noise
+10768665,Trials-Noise,audio started,0,HI_SNR7.mp3,h,i,noise
+10768665,Trials-Noise,audio finished,0,HI_SNR7.mp3,h,i,noise
+10768665,Trials-Noise,h,1,HI_SNR7.mp3,h,i,noise
+10768665,Trials-Noise,audio started,0,TI_SNR7.mp3,t,i,noise
+10768665,Trials-Noise,audio finished,0,TI_SNR7.mp3,t,i,noise
+10768665,Trials-Noise,t,1,TI_SNR7.mp3,t,i,noise
+10768665,Trials-Noise,audio started,0,PA_SNR7.mp3,p,a,noise
+10768665,Trials-Noise,audio finished,0,PA_SNR7.mp3,p,a,noise
+10768665,Trials-Noise,h,0,PA_SNR7.mp3,p,a,noise
+10768665,Trials-Noise,audio started,0,PA_SNR7.mp3,p,a,noise
+10768665,Trials-Noise,audio finished,0,PA_SNR7.mp3,p,a,noise
+10768665,Trials-Noise,h,0,PA_SNR7.mp3,p,a,noise
+10768665,Trials-Noise,audio started,0,KI_SNR7.mp3,k,i,noise
+10768665,Trials-Noise,audio finished,0,KI_SNR7.mp3,k,i,noise
+10768665,Trials-Noise,k,1,KI_SNR7.mp3,k,i,noise
+10768665,Trials-Noise,audio started,0,THI_SNR7.mp3,th,i,noise
+10768665,Trials-Noise,audio finished,0,THI_SNR7.mp3,th,i,noise
+10768665,Trials-Noise,th,1,THI_SNR7.mp3,th,i,noise
+10768665,Trials-Noise,audio started,0,PU_SNR7.mp3,p,u,noise
+10768665,Trials-Noise,audio finished,0,PU_SNR7.mp3,p,u,noise
+10768665,Trials-Noise,t,0,PU_SNR7.mp3,p,u,noise
+10768665,Trials-Noise,audio started,0,THI_SNR7.mp3,th,i,noise
+10768665,Trials-Noise,audio finished,0,THI_SNR7.mp3,th,i,noise
+10768665,Trials-Noise,th,1,THI_SNR7.mp3,th,i,noise
+10768665,Trials-Noise,audio started,0,THA_SNR7.mp3,th,a,noise
+10768665,Trials-Noise,audio finished,0,THA_SNR7.mp3,th,a,noise
+10768665,Trials-Noise,p,0,THA_SNR7.mp3,th,a,noise
+10768665,Trials-Noise,audio started,0,THI_SNR7.mp3,th,i,noise
+10768665,Trials-Noise,audio finished,0,THI_SNR7.mp3,th,i,noise
+10768665,Trials-Noise,th,1,THI_SNR7.mp3,th,i,noise
+10768665,Trials-Noise,audio started,0,THU_SNR7.mp3,th,u,noise
+10768665,Trials-Noise,audio finished,0,THU_SNR7.mp3,th,u,noise
+10768665,Trials-Noise,th,1,THU_SNR7.mp3,th,u,noise
+10768665,Trials-Noise,audio started,0,KI_SNR7.mp3,k,i,noise
+10768665,Trials-Noise,audio finished,0,KI_SNR7.mp3,k,i,noise
+10768665,Trials-Noise,k,1,KI_SNR7.mp3,k,i,noise
+10768665,Trials-Noise,audio started,0,TA_SNR7.mp3,t,a,noise
+10768665,Trials-Noise,audio finished,0,TA_SNR7.mp3,t,a,noise
+10768665,Trials-Noise,th,0,TA_SNR7.mp3,t,a,noise
+10768665,Trials-Noise,audio started,0,THA_SNR7.mp3,th,a,noise
+10768665,Trials-Noise,audio finished,0,THA_SNR7.mp3,th,a,noise
+10768665,Trials-Noise,th,1,THA_SNR7.mp3,th,a,noise
+10768665,Trials-Noise,audio started,0,TA_SNR7.mp3,t,a,noise
+10768665,Trials-Noise,audio finished,0,TA_SNR7.mp3,t,a,noise
+10768665,Trials-Noise,th,0,TA_SNR7.mp3,t,a,noise
+10768665,Trials-Noise,audio started,0,PI_SNR7.mp3,p,i,noise
+10768665,Trials-Noise,audio finished,0,PI_SNR7.mp3,p,i,noise
+10768665,Trials-Noise,t,0,PI_SNR7.mp3,p,i,noise
+10768665,Trials-Noise,audio started,0,PI_SNR7.mp3,p,i,noise
+10768665,Trials-Noise,audio finished,0,PI_SNR7.mp3,p,i,noise
+10768665,Trials-Noise,k,0,PI_SNR7.mp3,p,i,noise
+10768665,Trials-Noise,audio started,0,TA_SNR7.mp3,t,a,noise
+10768665,Trials-Noise,audio finished,0,TA_SNR7.mp3,t,a,noise
+10768665,Trials-Noise,th,0,TA_SNR7.mp3,t,a,noise
+10768665,Trials-Noise,audio started,0,KU_SNR7.mp3,k,u,noise
+10768665,Trials-Noise,audio finished,0,KU_SNR7.mp3,k,u,noise
+10768665,Trials-Noise,p,0,KU_SNR7.mp3,k,u,noise
+10768665,Trials-Noise,audio started,0,KI_SNR7.mp3,k,i,noise
+10768665,Trials-Noise,audio finished,0,KI_SNR7.mp3,k,i,noise
+10768665,Trials-Noise,k,1,KI_SNR7.mp3,k,i,noise
+10768665,Trials-Noise,audio started,0,HI_SNR7.mp3,h,i,noise
+10768665,Trials-Noise,audio finished,0,HI_SNR7.mp3,h,i,noise
+10768665,Trials-Noise,k,0,HI_SNR7.mp3,h,i,noise
+10768665,Trials-Noise,audio started,0,HU_SNR7.mp3,h,u,noise
+10768665,Trials-Noise,audio finished,0,HU_SNR7.mp3,h,u,noise
+10768665,Trials-Noise,h,1,HU_SNR7.mp3,h,u,noise
+10768665,End,,1,,,,
+10768665,End,Nandhakumar M,1,,,,
+10768665,End,nandhagopi2001@gmail.com,1,,,,
+10768665,End,nandhagopi2001@oksbi,1,,,,
+10768665,End,15/03/2001,1,,,,
+10768665,,END,0,,,,
+,,,,,,,
