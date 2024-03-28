@@ -282,10 +282,18 @@ $(document).ready(function () {
 ##      MD5sum NeedsCompilation Built</code></pre>
 <pre class="r"><code>library(cvms)
 library(ggplot2)
+library(dplyr)
 setwd(&quot;/Users/chandannarayan/GitHub/POAsalience/&quot;)
 data &lt;- read.csv(&quot;data_ID_3-27.csv&quot;, header=TRUE)
 data_clean &lt;- subset(data, display == &quot;Trials-Clean&quot;)
-data_noise &lt;- subset(data, display == &quot;Trials-Noise&quot;)</code></pre>
+data_noise &lt;- subset(data, display == &quot;Trials-Noise&quot;)
+
+# How many participants
+num_unique_participants &lt;- data_clean %&gt;%
+  distinct(Participant.Private.ID) %&gt;%
+  nrow()
+num_unique_participants</code></pre>
+<pre><code>## [1] 13</code></pre>
 </div>
 <div id="confusion-matrix" class="section level2">
 <h2>Confusion Matrix</h2>
@@ -293,7 +301,8 @@ data_noise &lt;- subset(data, display == &quot;Trials-Noise&quot;)</code></pre>
 <div id="clean" class="section level1">
 <h1>Clean</h1>
 <pre class="r"><code>conf_mat_clean &lt;- confusion_matrix(targets = data_clean$cons, predictions = data_clean$Response)
-plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]])+ ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)</code></pre>
+clean &lt;- plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]]) + ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)
+print(clean, show_percents =&quot;main&quot;)</code></pre>
 <p><img src="Confusion_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 <div id="noise" class="section level1">
