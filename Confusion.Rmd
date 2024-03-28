@@ -39,7 +39,7 @@ num_unique_participants
 
 ```{r}
 conf_mat_clean <- confusion_matrix(targets = data_clean$cons, predictions = data_clean$Response)
-clean <- plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]]) + ggplot2::labs(x = "Signal", y = "Response")
+clean <- plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = "Signal", y = "Response")
 print(clean, show_percents ="main")
 
 ```
@@ -47,7 +47,7 @@ print(clean, show_percents ="main")
 # Noise
 ```{r}
 conf_mat_noise <- confusion_matrix(targets = data_noise$cons, predictions = data_noise$Response)
-plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]], palette = "Oranges") + ggplot2::labs(x = "Signal", y = "Response")
+plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = "Oranges") + ggplot2::labs(x = "Signal", y = "Response")
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
