@@ -22,7 +22,7 @@ library(cvms)
 library(ggplot2)
 library(dplyr)
 setwd("/Users/chandannarayan/GitHub/POAsalience/")
-data <- read.csv("data_ID_3-27.csv", header=TRUE)
+data <- read.csv("data_ID_3-31.csv", header=TRUE)
 data_clean <- subset(data, display == "Trials-Clean")
 data_noise <- subset(data, display == "Trials-Noise")
 
@@ -33,7 +33,7 @@ num_unique_participants <- data_clean %>%
 num_unique_participants
 ```
 
-## Confusion Matrix
+## Confusion Matrix-NoAmp
 
 # Clean
 
@@ -51,3 +51,29 @@ plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]], add_counts = FALSE
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Confusion Matrix-Amp
+
+```{r}
+data_amp <- read.csv("data_amp_ID_3-31.csv", header=TRUE)
+data_clean_amp <- subset(data_amp, display == "Trials-Clean")
+data_noise_amp <- subset(data_amp, display == "Trials-Noise")
+
+# How many participants
+num_unique_participants <- data_clean_amp %>%
+  distinct(Participant.Private.ID) %>%
+  nrow()
+num_unique_participants
+```
+
+```{r}
+conf_mat_clean_amp <- confusion_matrix(targets = data_clean_amp$cons, predictions = data_clean_amp$Response)
+clean_amp <- plot_confusion_matrix(conf_mat_clean_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = "Signal", y = "Response")
+print(clean_amp, show_percents ="main")
+
+```
+
+```{r}
+conf_mat_noise_amp <- confusion_matrix(targets = data_noise_amp$cons, predictions = data_noise_amp$Response)
+plot_confusion_matrix(conf_mat_noise_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = "Oranges") + ggplot2::labs(x = "Signal", y = "Response")
+```
