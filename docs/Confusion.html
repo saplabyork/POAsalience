@@ -284,7 +284,7 @@ $(document).ready(function () {
 library(ggplot2)
 library(dplyr)
 setwd(&quot;/Users/chandannarayan/GitHub/POAsalience/&quot;)
-data &lt;- read.csv(&quot;data_ID_3-31.csv&quot;, header=TRUE)
+data &lt;- read.csv(&quot;data_ID_4-02.csv&quot;, header=TRUE)
 data_clean &lt;- subset(data, display == &quot;Trials-Clean&quot;)
 data_noise &lt;- subset(data, display == &quot;Trials-Noise&quot;)
 
@@ -293,7 +293,7 @@ num_unique_participants &lt;- data_clean %&gt;%
   distinct(Participant.Private.ID) %&gt;%
   nrow()
 num_unique_participants</code></pre>
-<pre><code>## [1] 19</code></pre>
+<pre><code>## [1] 20</code></pre>
 </div>
 <div id="confusion-matrix-noamp" class="section level2">
 <h2>Confusion Matrix-NoAmp</h2>

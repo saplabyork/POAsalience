@@ -22,7 +22,7 @@ library(cvms)
 library(ggplot2)
 library(dplyr)
 setwd("/Users/chandannarayan/GitHub/POAsalience/")
-data <- read.csv("data_ID_3-31.csv", header=TRUE)
+data <- read.csv("data_ID_4-02.csv", header=TRUE)
 data_clean <- subset(data, display == "Trials-Clean")
 data_noise <- subset(data, display == "Trials-Noise")
 
