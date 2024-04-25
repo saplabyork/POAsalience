@@ -63,7 +63,7 @@ library(ggplot2)
 library(dplyr)
 
 # new names for snr facet labels
-snr_names <- list("clean"="No added noise","15"="SNR 15dB", "5"="SNR 5 dB")
+snr_names <- list("clean"="SNR 15dB","15"="SNR 10dB", "5"="SNR 5 dB")
 
 # use the labeller function in facet
 snr_labeller <- function(variable,value){
@@ -85,7 +85,7 @@ summary_filtered_full_data$snr_f = factor(summary_filtered_full_data$snr, levels
 # Plot using ggplot2
 grey_colors <- c("grey20", "grey40", "grey60", "grey80")
 
-full_plot <- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
+AX_plot_grey <- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
   geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) + ylim(0,1)+
   geom_errorbar(aes(ymin = mean_corr - se_corr, ymax = mean_corr + se_corr),
                 position = position_dodge(width = 0.9), width = 0.25) +
@@ -95,7 +95,21 @@ full_plot <- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill
   scale_fill_manual(values = grey_colors) + 
   theme_minimal()
 
-full_plot
+AX_plot_color <- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
+  geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) + ylim(0,1)+
+  geom_errorbar(aes(ymin = mean_corr - se_corr, ymax = mean_corr + se_corr),
+                position = position_dodge(width = 0.9), width = 0.25) +
+  facet_wrap(~snr_f,ncol = 3, labeller = snr_labeller) + 
+  labs(x = "Contrast", y = "Proportion Correct", fill = "Contrast") +
+  scale_x_discrete(labels=c("p-h", "p-k", "p-ʈ", "p-t̪")) +
+  theme_minimal()
+
+#AX_plot_grey
+AX_plot_color
+
+ggsave('AX_plot_grey.png', bg="white", dpi=500, width = 4, height = 4)
+ggsave('AX_plot_color.png', bg="white", dpi=500, width = 4, height = 4)
+
 ```
 
 # **Model**
@@ -109,3 +123,7 @@ filtered_full_data$snr <- relevel(filtered_full_data$snr, ref = "clean")
 model <- glmer(corr ~ snr * con + (1 | part), data = filtered_full_data, family = binomial, control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
 summary(model)
 ```
+
+{r echo=FALSE}
+library(texreg)
+texreg(model, single.row = TRUE)

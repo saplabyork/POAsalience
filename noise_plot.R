@@ -13,7 +13,7 @@ noise_spec$intensity_smooth <-
 ##plot
 noise_ltas_smooth <- ggplot(noise_spec) +
   aes(x = freq.Hz., y = intensity_smooth) +
-  coord_cartesian(xlim = c(0,10000)) + ylim(c(-10,40))+
+  coord_cartesian(xlim = c(0,8000)) + ylim(c(-10,40))+
   geom_line() + xlab("Freq (Hz)") + ylab("SPL (dB)") +
   theme_bw()
 

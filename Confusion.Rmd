@@ -22,7 +22,7 @@ library(cvms)
 library(ggplot2)
 library(dplyr)
 setwd("/Users/chandannarayan/GitHub/POAsalience/")
-data <- read.csv("data_ID_4-02.csv", header=TRUE)
+data <- read.csv("data_ID_4-10.csv", header=TRUE)
 data_clean <- subset(data, display == "Trials-Clean")
 data_noise <- subset(data, display == "Trials-Noise")
 
@@ -39,15 +39,27 @@ num_unique_participants
 
 ```{r}
 conf_mat_clean <- confusion_matrix(targets = data_clean$cons, predictions = data_clean$Response)
-clean <- plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = "Signal", y = "Response")
-print(clean, show_percents ="main")
+clean_mat <- plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = "Signal", y = "Response")
+clean_mat <- clean_mat + theme_bw()
+print(clean_mat, show_percents ="main")
+ggsave("/Users/chandannarayan/GitHub/POAsalience/clean_mat.png", width = 3, height = 3)
 
 ```
 
 # Noise
 ```{r}
 conf_mat_noise <- confusion_matrix(targets = data_noise$cons, predictions = data_noise$Response)
-plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = "Oranges") + ggplot2::labs(x = "Signal", y = "Response")
+noise_mat <- plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = "Oranges") + ggplot2::labs(x = "Signal", y = "Response")
+noise_mat <- noise_mat + theme_bw()
+ggsave("/Users/chandannarayan/GitHub/POAsalience/noise_mat.png", width = 3, height = 3)
+
+#Side-by-side cm
+library(cowplot)
+clean_noise_mat <- plot_grid(clean_mat, noise_mat, labels = "AUTO", align = "v", label_size = 10, label_x = 0.1, label_y = 0.98)
+clean_noise_mat
+ggsave("/Users/chandannarayan/GitHub/POAsalience/clean_noise_mat.png", height = 3)
+
+
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -55,7 +67,7 @@ Note that the `echo = FALSE` parameter was added to the code chunk to prevent pr
 ## Confusion Matrix-Amp
 
 ```{r}
-data_amp <- read.csv("data_amp_ID_3-31.csv", header=TRUE)
+data_amp <- read.csv("data_amp_ID_4-11.csv", header=TRUE)
 data_clean_amp <- subset(data_amp, display == "Trials-Clean")
 data_noise_amp <- subset(data_amp, display == "Trials-Noise")
 
@@ -68,12 +80,43 @@ num_unique_participants
 
 ```{r}
 conf_mat_clean_amp <- confusion_matrix(targets = data_clean_amp$cons, predictions = data_clean_amp$Response)
-clean_amp <- plot_confusion_matrix(conf_mat_clean_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = "Signal", y = "Response")
-print(clean_amp, show_percents ="main")
+clean_amp_mat <- plot_confusion_matrix(conf_mat_clean_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = "Signal", y = "Response")
+clean_amp_mat <- clean_amp_mat + theme_bw()
+print(clean_amp_mat, show_percents ="main")
 
 ```
 
 ```{r}
 conf_mat_noise_amp <- confusion_matrix(targets = data_noise_amp$cons, predictions = data_noise_amp$Response)
-plot_confusion_matrix(conf_mat_noise_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = "Oranges") + ggplot2::labs(x = "Signal", y = "Response")
+noise_amp_mat<-plot_confusion_matrix(conf_mat_noise_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = "Oranges") + ggplot2::labs(x = "Signal", y = "Response")
+noise_amp_mat <- noise_amp_mat +theme_bw()
+
+## Side by side-Amplified
+library(cowplot)
+clean_noise_amp_mat <- plot_grid(clean_amp_mat, noise_amp_mat, labels = "AUTO", align = "v", label_size = 10, label_x = 0.1, label_y = 0.98)
+clean_noise_amp_mat
+ggsave("/Users/chandannarayan/GitHub/POAsalience/clean_noise_amp_mat.png", height = 3)
+
+```
+
+```{r}
+library(lme4)
+#Make new df with just p-h response in the noise cms. I want to see if the p-h cells in the noise cms are different. 
+ph_noise_amp <- rbind(data_noise, data_noise_amp)
+#Subet to make p-h
+ph__noise_amp <- subset(ph__noise_amp, (ph_noise_amp$cons=="p" & (ph_noise_amp$Response=="h" | ph_noise_amp$Response=="p")))
+# Make new column
+ph_noise_amp$amp <- ifelse(grepl("_12", ph_noise_amp$Spreadsheet..sound), 1, 0)
+
+#Model showing that the p-h confusions in noise in the amp/no amp groups are different
+model_ph_noise_amp <- glmer(corr ~ amp + (1 | Participant.Private.ID), data = ph_noise_amp, family = binomial)
+summary(model_ph_noise_amp)
+
+## Now same for the no noise condition
+ph_clean_amp <- rbind(data, data_amp)
+ph_clean_amp <- subset(ph_clean_amp, (ph_clean_amp$cons=="p" & (ph_clean_amp$Response=="h" | ph_clean_amp$Response=="p")))
+ph_clean_amp$amp <- ifelse(grepl("_12", ph_clean_amp$Spreadsheet..sound), 1, 0)
+
+model_ph_clean_amp <- glmer(corr ~ amp + (1 | Participant.Private.ID), data = ph_clean_amp, family = binomial)
+summary(model_ph_clean_amp)
 ```

@@ -324,7 +324,7 @@ library(ggplot2)
 library(dplyr)
 
 # new names for snr facet labels
-snr_names &lt;- list(&quot;clean&quot;=&quot;No added noise&quot;,&quot;15&quot;=&quot;SNR 15dB&quot;, &quot;5&quot;=&quot;SNR 5 dB&quot;)
+snr_names &lt;- list(&quot;clean&quot;=&quot;SNR 15dB&quot;,&quot;15&quot;=&quot;SNR 10dB&quot;, &quot;5&quot;=&quot;SNR 5 dB&quot;)
 
 # use the labeller function in facet
 snr_labeller &lt;- function(variable,value){
@@ -346,7 +346,7 @@ summary_filtered_full_data$snr_f = factor(summary_filtered_full_data$snr, levels
 # Plot using ggplot2
 grey_colors &lt;- c(&quot;grey20&quot;, &quot;grey40&quot;, &quot;grey60&quot;, &quot;grey80&quot;)
 
-full_plot &lt;- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
+AX_plot_grey &lt;- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
   geom_bar(stat = &quot;identity&quot;, position = &quot;dodge&quot;, show.legend = FALSE) + ylim(0,1)+
   geom_errorbar(aes(ymin = mean_corr - se_corr, ymax = mean_corr + se_corr),
                 position = position_dodge(width = 0.9), width = 0.25) +
@@ -356,8 +356,20 @@ full_plot &lt;- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, f
   scale_fill_manual(values = grey_colors) + 
   theme_minimal()
 
-full_plot</code></pre>
+AX_plot_color &lt;- ggplot(summary_filtered_full_data, aes(x = con, y = mean_corr, fill = con)) +
+  geom_bar(stat = &quot;identity&quot;, position = &quot;dodge&quot;, show.legend = FALSE) + ylim(0,1)+
+  geom_errorbar(aes(ymin = mean_corr - se_corr, ymax = mean_corr + se_corr),
+                position = position_dodge(width = 0.9), width = 0.25) +
+  facet_wrap(~snr_f,ncol = 3, labeller = snr_labeller) + 
+  labs(x = &quot;Contrast&quot;, y = &quot;Proportion Correct&quot;, fill = &quot;Contrast&quot;) +
+  scale_x_discrete(labels=c(&quot;p-h&quot;, &quot;p-k&quot;, &quot;p-ʈ&quot;, &quot;p-t̪&quot;)) +
+  theme_minimal()
+
+#AX_plot_grey
+AX_plot_color</code></pre>
 <p><img src="AX_task_results_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>ggsave(&#39;AX_plot_grey.png&#39;, bg=&quot;white&quot;, dpi=500, width = 4, height = 4)
+ggsave(&#39;AX_plot_color.png&#39;, bg=&quot;white&quot;, dpi=500, width = 4, height = 4)</code></pre>
 </div>
 <div id="model" class="section level1">
 <h1><strong>Model</strong></h1>
@@ -431,6 +443,7 @@ summary(model)</code></pre>
 ## snr5:conp-t   0.610                               
 ## snr15:cnp-th  0.329        0.180                  
 ## snr5:cnp-th   0.183        0.402       0.570</code></pre>
+<p>{r echo=FALSE} library(texreg) texreg(model, single.row = TRUE)</p>
 </div>
 
 

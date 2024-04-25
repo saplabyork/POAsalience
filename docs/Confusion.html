@@ -284,7 +284,7 @@ $(document).ready(function () {
 library(ggplot2)
 library(dplyr)
 setwd(&quot;/Users/chandannarayan/GitHub/POAsalience/&quot;)
-data &lt;- read.csv(&quot;data_ID_4-02.csv&quot;, header=TRUE)
+data &lt;- read.csv(&quot;data_ID_4-10.csv&quot;, header=TRUE)
 data_clean &lt;- subset(data, display == &quot;Trials-Clean&quot;)
 data_noise &lt;- subset(data, display == &quot;Trials-Noise&quot;)
 
@@ -293,7 +293,7 @@ num_unique_participants &lt;- data_clean %&gt;%
   distinct(Participant.Private.ID) %&gt;%
   nrow()
 num_unique_participants</code></pre>
-<pre><code>## [1] 20</code></pre>
+<pre><code>## [1] 27</code></pre>
 </div>
 <div id="confusion-matrix-noamp" class="section level2">
 <h2>Confusion Matrix-NoAmp</h2>
@@ -301,21 +301,31 @@ num_unique_participants</code></pre>
 <div id="clean" class="section level1">
 <h1>Clean</h1>
 <pre class="r"><code>conf_mat_clean &lt;- confusion_matrix(targets = data_clean$cons, predictions = data_clean$Response)
-clean &lt;- plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)
-print(clean, show_percents =&quot;main&quot;)</code></pre>
+clean_mat &lt;- plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)
+clean_mat &lt;- clean_mat + theme_bw()
+print(clean_mat, show_percents =&quot;main&quot;)</code></pre>
 <p><img src="Confusion_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>ggsave(&quot;/Users/chandannarayan/GitHub/POAsalience/clean_mat.png&quot;, width = 3, height = 3)</code></pre>
 </div>
 <div id="noise" class="section level1">
 <h1>Noise</h1>
 <pre class="r"><code>conf_mat_noise &lt;- confusion_matrix(targets = data_noise$cons, predictions = data_noise$Response)
-plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = &quot;Oranges&quot;) + ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)</code></pre>
+noise_mat &lt;- plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = &quot;Oranges&quot;) + ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)
+noise_mat &lt;- noise_mat + theme_bw()
+ggsave(&quot;/Users/chandannarayan/GitHub/POAsalience/noise_mat.png&quot;, width = 3, height = 3)
+
+#Side-by-side cm
+library(cowplot)
+clean_noise_mat &lt;- plot_grid(clean_mat, noise_mat, labels = &quot;AUTO&quot;, align = &quot;v&quot;, label_size = 10, label_x = 0.1, label_y = 0.98)
+clean_noise_mat</code></pre>
 <p><img src="Confusion_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>ggsave(&quot;/Users/chandannarayan/GitHub/POAsalience/clean_noise_mat.png&quot;, height = 3)</code></pre>
 <p>Note that the <code>echo = FALSE</code> parameter was added to the
 code chunk to prevent printing of the R code that generated the
 plot.</p>
 <div id="confusion-matrix-amp" class="section level2">
 <h2>Confusion Matrix-Amp</h2>
-<pre class="r"><code>data_amp &lt;- read.csv(&quot;data_amp_ID_3-31.csv&quot;, header=TRUE)
+<pre class="r"><code>data_amp &lt;- read.csv(&quot;data_amp_ID_4-11.csv&quot;, header=TRUE)
 data_clean_amp &lt;- subset(data_amp, display == &quot;Trials-Clean&quot;)
 data_noise_amp &lt;- subset(data_amp, display == &quot;Trials-Noise&quot;)
 
@@ -324,14 +334,68 @@ num_unique_participants &lt;- data_clean_amp %&gt;%
   distinct(Participant.Private.ID) %&gt;%
   nrow()
 num_unique_participants</code></pre>
-<pre><code>## [1] 3</code></pre>
+<pre><code>## [1] 25</code></pre>
 <pre class="r"><code>conf_mat_clean_amp &lt;- confusion_matrix(targets = data_clean_amp$cons, predictions = data_clean_amp$Response)
-clean_amp &lt;- plot_confusion_matrix(conf_mat_clean_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)
-print(clean_amp, show_percents =&quot;main&quot;)</code></pre>
+clean_amp_mat &lt;- plot_confusion_matrix(conf_mat_clean_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)
+clean_amp_mat &lt;- clean_amp_mat + theme_bw()
+print(clean_amp_mat, show_percents =&quot;main&quot;)</code></pre>
 <p><img src="Confusion_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <pre class="r"><code>conf_mat_noise_amp &lt;- confusion_matrix(targets = data_noise_amp$cons, predictions = data_noise_amp$Response)
-plot_confusion_matrix(conf_mat_noise_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = &quot;Oranges&quot;) + ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)</code></pre>
+noise_amp_mat&lt;-plot_confusion_matrix(conf_mat_noise_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = &quot;Oranges&quot;) + ggplot2::labs(x = &quot;Signal&quot;, y = &quot;Response&quot;)
+noise_amp_mat &lt;- noise_amp_mat +theme_bw()
+
+## Side by side-Amplified
+library(cowplot)
+clean_noise_amp_mat &lt;- plot_grid(clean_amp_mat, noise_amp_mat, labels = &quot;AUTO&quot;, align = &quot;v&quot;, label_size = 10, label_x = 0.1, label_y = 0.98)
+clean_noise_amp_mat</code></pre>
 <p><img src="Confusion_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>ggsave(&quot;/Users/chandannarayan/GitHub/POAsalience/clean_noise_amp_mat.png&quot;, height = 3)</code></pre>
+<pre class="r"><code>library(lme4)
+#Make new df with just p-h response in the noise cms. I want to see if the p-h cells in the noise cms are different. 
+ph_amp &lt;- rbind(data_noise, data_noise_amp)
+#Subet to make p-h
+ph_amp &lt;- subset(ph_amp, ph_amp$cons==&quot;p&quot; &amp; ph_amp$Response==&quot;h&quot;)
+# Make new column
+ph_amp$amp &lt;- ifelse(grepl(&quot;_12&quot;, ph_amp$Spreadsheet..sound), 1, 0)
+
+
+model &lt;- glmer(corr ~ cons + (1 | Participant.Private.ID), data = data_noise, family = binomial, control=glmerControl(optimizer=&quot;bobyqa&quot;,optCtrl=list(maxfun=2e5)))
+summary(model)</code></pre>
+<pre><code>## Generalized linear mixed model fit by maximum likelihood (Laplace
+##   Approximation) [glmerMod]
+##  Family: binomial  ( logit )
+## Formula: corr ~ cons + (1 | Participant.Private.ID)
+##    Data: data_noise
+## Control: glmerControl(optimizer = &quot;bobyqa&quot;, optCtrl = list(maxfun = 2e+05))
+## 
+##      AIC      BIC   logLik deviance df.resid 
+##   1418.1   1448.7   -703.1   1406.1     1209 
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -2.5290 -0.9372  0.3954  0.7390  2.4529 
+## 
+## Random effects:
+##  Groups                 Name        Variance Std.Dev.
+##  Participant.Private.ID (Intercept) 0.2234   0.4726  
+## Number of obs: 1215, groups:  Participant.Private.ID, 27
+## 
+## Fixed effects:
+##             Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)  0.43200    0.16234   2.661  0.00779 ** 
+## consk        0.10939    0.19089   0.573  0.56662    
+## consp       -1.84685    0.21217  -8.705  &lt; 2e-16 ***
+## const̪        1.36025    0.22574   6.026 1.68e-09 ***
+## consʈ        0.03619    0.19015   0.190  0.84903    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##       (Intr) consk  consp  const̪ 
+## consk -0.581                     
+## consp -0.530  0.444              
+## const̪ -0.488  0.419  0.367       
+## consʈ -0.584  0.496  0.446  0.420</code></pre>
 </div>
 </div>
 
