@@ -28,6 +28,12 @@ data_5 <- read.csv("Master_5_local.csv", header = TRUE)
 data_clean <- read.csv("Master_clean_local.csv", header = TRUE)
 full_data <- rbind(data_clean,data_15,data_5)
 
+# How many participants
+num_unique_participants <- full_data %>%
+  distinct(Participant.Private.ID) %>%
+  nrow()
+num_unique_participants
+
 # Make new data frame with dental and retroflex symbols
 
 #full_data_new <-  data.frame(

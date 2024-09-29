@@ -39,7 +39,7 @@ num_unique_participants
 
 ```{r}
 conf_mat_clean <- confusion_matrix(targets = data_clean$cons, predictions = data_clean$Response)
-clean_mat <- plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = "Signal", y = "Response")
+clean_mat <- plot_confusion_matrix(conf_mat_clean$`Confusion Matrix`[[1]], add_counts = TRUE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = "Signal", y = "Response")
 clean_mat <- clean_mat + theme_bw()
 print(clean_mat, show_percents ="main")
 ggsave("/Users/chandannarayan/GitHub/POAsalience/clean_mat.png", width = 3, height = 3)
@@ -49,7 +49,7 @@ ggsave("/Users/chandannarayan/GitHub/POAsalience/clean_mat.png", width = 3, heig
 # Noise
 ```{r}
 conf_mat_noise <- confusion_matrix(targets = data_noise$cons, predictions = data_noise$Response)
-noise_mat <- plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = "Oranges") + ggplot2::labs(x = "Signal", y = "Response")
+noise_mat <- plot_confusion_matrix(conf_mat_noise$`Confusion Matrix`[[1]], add_counts = TRUE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = "Oranges") + ggplot2::labs(x = "Signal", y = "Response")
 noise_mat <- noise_mat + theme_bw()
 ggsave("/Users/chandannarayan/GitHub/POAsalience/noise_mat.png", width = 3, height = 3)
 
@@ -58,7 +58,6 @@ library(cowplot)
 clean_noise_mat <- plot_grid(clean_mat, noise_mat, labels = "AUTO", align = "v", label_size = 10, label_x = 0.1, label_y = 0.98)
 clean_noise_mat
 ggsave("/Users/chandannarayan/GitHub/POAsalience/clean_noise_mat.png", height = 3)
-
 
 ```
 
@@ -80,7 +79,7 @@ num_unique_participants
 
 ```{r}
 conf_mat_clean_amp <- confusion_matrix(targets = data_clean_amp$cons, predictions = data_clean_amp$Response)
-clean_amp_mat <- plot_confusion_matrix(conf_mat_clean_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = "Signal", y = "Response")
+clean_amp_mat <- plot_confusion_matrix(conf_mat_clean_amp$`Confusion Matrix`[[1]], add_counts = TRUE, add_row_percentages = FALSE, add_col_percentages = FALSE) + ggplot2::labs(x = "Signal", y = "Response")
 clean_amp_mat <- clean_amp_mat + theme_bw()
 print(clean_amp_mat, show_percents ="main")
 
@@ -88,7 +87,7 @@ print(clean_amp_mat, show_percents ="main")
 
 ```{r}
 conf_mat_noise_amp <- confusion_matrix(targets = data_noise_amp$cons, predictions = data_noise_amp$Response)
-noise_amp_mat<-plot_confusion_matrix(conf_mat_noise_amp$`Confusion Matrix`[[1]], add_counts = FALSE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = "Oranges") + ggplot2::labs(x = "Signal", y = "Response")
+noise_amp_mat<-plot_confusion_matrix(conf_mat_noise_amp$`Confusion Matrix`[[1]], add_counts = TRUE, add_row_percentages = FALSE, add_col_percentages = FALSE, palette = "Oranges") + ggplot2::labs(x = "Signal", y = "Response")
 noise_amp_mat <- noise_amp_mat +theme_bw()
 
 ## Side by side-Amplified
